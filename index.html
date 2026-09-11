@@ -1,28 +1,185 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roti DAW - Website UMKM</title>
-    <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-    <main class="page">
-        <selection class="hero">
-            <p class="eyebrow">UMKM Pekalongan</p>
-            <h1>Roti DAW</h1>
-            <p>Roti lokal pilihan untuk teman belajar, bekerja, dan berdiskusi.</p>
-            <button id="promoButton" type="button">Lihat Promo Hari Ini</button>
-        </selection>
 
-        <selectin aria-labelledby="=produk-title">
-            <h2 id="produk-title">Produk Unggulan</h2>
+    <title>NOURA Bites - Smart Snack</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main class="page">
+
+        <!-- BAGIAN ATAS / HERO -->
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    SMART SNACK BRAND
+                </p>
+
+                <h1> NOURA Bites </h1>
+
+                <p class="hero-text">
+                    Smart Snack for Smart Days
+                </p>
+
+                <p class="hero-description">
+                    Camilan lezat berbahan cokelat, almond, dan coconut
+                    untuk menemani aktivitas sehari-hari.
+                </p>
+
+                <button id="promoButton" type="button">
+                    Lihat Promo Hari Ini
+                </button>
+            </div>
+
+            <!-- ICON PRODUK -->
+            <div class="hero-product-circle">
+
+                <div class="product-circle">
+                    <span>🍫</span>
+                </div>
+
+                <p>
+                    Delicious • Simple • Smart
+                </p>
+            </div>
+        </section>
+
+        <!-- BAGIAN PRODUK -->
+        <section class="products-section" aria-labelledby="produk-title">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    PILIH YOUR FAVORITE
+                </p>
+
+                <h2 id="produk-title">
+                    OUR PRODUCTS
+                </h2>
+
+                <p>
+                    Temukan camilan favoritmu di NOURA Bites.
+                    Dari perpaduan cokelat lembut, almond renyah,
+                    hingga sentuhan kelapa yang khas, setiap gigitan
+                    memberikan pengalaman rasa yang tak terlupakan.
+                </p>
+            </div>
+
             <ul class="products">
-                <li>Curros - Rp.18.000</li>
-                <li>Roti Balok - Rp.22.000</li>
+
+                <!-- PRODUK 1 -->
+                <li class="product-card">
+
+                    <div class="product-icon">
+                        🍫
+                    </div>
+
+                    <div class="product-info">
+                        <h3>
+                            Chocolate Almond
+                        </h3>
+
+                        <p>
+                            Perpaduan cokelat lembut dengan potongan
+                            almond renyah yang cocok menemani waktu
+                            belajar dan bekerja.
+                        </p>
+
+                        <strong> Rp15.000 </strong>
+                    </div>
+                </li>
+
+                <!-- PRODUK 2 -->
+                <li class="product-card">
+
+                    <div class="product-icon">
+                        🥥
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            Coconut Choco
+                        </h3>
+
+                        <p>
+                            Cokelat dengan sentuhan kelapa yang memberikan
+                            perpaduan rasa manis, gurih, dan aroma yang khas.
+                        </p>
+
+                        <strong> Rp15.000 </strong>
+                    </div>
+                </li>
+
+                <!-- PRODUK 3 -->
+                <li class="product-card featured">
+
+                    <div class="product-icon">
+                        🍫
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-seller">
+                            BEST SELLER
+                        </span>
+
+                        <h3> Smart Snack Mix </h3>
+
+                        <p>
+                            Kombinasi cokelat, almond, dan coconut
+                            dalam satu kemasan untuk menikmati tiga
+                            rasa favorit sekaligus.
+                        </p>
+
+                        <strong> Rp20.000 </strong>
+
+                    </div>
+                </li>
             </ul>
-        </selectin>
+        </section>
+
+
+        <!-- PROMO SECTION -->
+        <section class="promo-section" aria-labelledby="promo-title">
+
+            <div>
+
+                <p class="eyebrow">
+                    PROMO HARI INI
+                </p>
+
+                <h2 id="promo-title">
+                    Saatnya Nikmati Cemilan Favoritmu
+                    dengan Harga Spesial!
+                </h2>
+
+                <p>
+                    Dapatkan penawaran istimewa untuk Smart Snack Mix
+                    hanya di hari ini!
+                </p>
+            </div>
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer>
+            <p>
+                © 2026 NOURA Bites. Smart Snack for Smart Days.
+            </p>
+        </footer>
     </main>
+
+    <!-- JAVASCRIPT -->
     <script src="js/script.js"></script>
+
 </body>
 </html>
