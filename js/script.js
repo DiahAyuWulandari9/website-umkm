@@ -4,5 +4,6 @@ const promoButton = document.getElementById("promoButton");
 
 // Ketika tombol promo atas diklik
 promoButton.addEventListener("click", function () {
-    alert("Promo hari ini: Smart Snack Mix hanya Rp20.000!");
+    alert("Yuk, cek promo NOURA Bites hari ini!");
+    console.log("Tombol promo NOURA Bites diklik");
 });
