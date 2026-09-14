@@ -85,21 +85,10 @@ button:hover{
     text-align: center;
 }
 
-.product-circle {
-    width: 250px;
-    height: 250px;
-    background-color: #f3d2ae;
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    box-shadow: 0 15px 30px rgba(80, 45, 20, 0.15);
-}
-
-.product-circle span {
-    font-size: 100px;
+.hero-image{
+    width: 280px;
+    max-width: 100%;
+    height: auto;
 }
 
 .hero-product-circle > p {
@@ -118,6 +107,11 @@ button:hover{
     margin: 0 auto 40px;
 }
 
+.section-heading h1 {
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
 .section-heading h2 {
     font-size: 36px;
     margin-bottom: 10px;
@@ -200,6 +194,19 @@ button:hover{
     margin-bottom: 10px;
 }
 
+.page > .products-section > section{
+    margin-bottom: 35px;
+}
+
+.page > .products-section > section h2{
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.page > .products-section > section p{
+    color: #765f4f;
+}
+
 .promo-section {
     margin: 50px 0;
     padding: 45px;
@@ -269,15 +276,6 @@ footer {
         font-size: 20px;
     }
 
-    .product-circle {
-        width: 210px;
-        height: 210px;
-    }
-
-    .product-circle span {
-        font-size: 80px;
-    }
-
     .promo-section {
         padding: 30px 20px;
     }
@@ -285,4 +283,156 @@ footer {
     .promo-section h2 {
         font-size: 26px;
     }
+}
+
+/*=============================
+SEMANTIC HTML DAN NAVIGASI
+==============================*/
+.skip-link{
+    position: absolute;
+    left: -9999px;
+    padding: 8px 12px;
+    color: white;
+    background-color: #3b2618;
+    text-decoration: none;
+}
+
+.skip-link:focus{
+    top: 8px;
+    left: 8px;
+}
+
+.site-header{
+    padding: 16px 20px;
+    background-color: white;
+    border-bottom: 1px solid #ead8c8;
+}
+
+.nav{
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.brand{
+    display: inline-block;
+    margin-bottom: 8px;
+    color: #3b2618;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.nav li {
+    display: inline-block;
+    margin-right: 12px;
+}
+
+.nav a {
+    color: #765f4f;
+    text-decoration: none;
+}
+
+.nav a[aria-current="page"] {
+    color: #9f4f1f;
+    font-weight: bold;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #c56b2d;
+    outline-offset: 3px;
+}
+
+.site-footer {
+    padding: 24px 20px;
+    color: white;
+    text-align: center;
+    background-color: #3b2618;
+}
+
+/* =============================
+   HALAMAN TENTANG KAMI
+   ============================= */
+
+#konten > .products-section > section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(80, 45, 20, 0.08);
+}
+
+#konten > .products-section > section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#konten > .products-section > section h3 {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+#konten > .products-section > section p {
+    color: #765f4f;
+    margin-bottom: 8px;
+}
+
+#konten > .products-section > section:last-child {
+    margin-bottom: 0;
+}
+
+/* Tampilan halaman Tentang Kami di layar kecil */
+@media (max-width: 500px) {
+
+    .section-heading h1 {
+        font-size: 32px;
+    }
+
+    #konten > .products-section > section {
+        padding: 20px;
+    }
+
+}
+
+/* =============================
+   KONTAK SINGKAT
+   ============================= */
+
+.contact-section {
+    padding: 50px 0;
+}
+
+.contact-info {
+    background-color: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(80, 45, 20, 0.08);
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.contact-info p {
+    color: #765f4f;
+    margin-bottom: 12px;
+}
+
+.contact-info p:last-child {
+    margin-bottom: 0;
+}
+
+.contact-info a {
+    color: #9f4f1f;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
 }

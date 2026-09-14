@@ -11,19 +11,52 @@
 </head>
 
 <body>
+    <!-- SKIP LINK-->
+    <a class="skip-link" href="#konten">Lewati ke konten utama</a>
 
-    <main class="page">
+    <!-- HEADER -->
+    <header class="site-header">
+        <nav class="nav" aria-label="Navigasi Utama">
+            <a class="brand" href="index.html">
+                NOURA Bites
+            </a>
 
-        <!-- BAGIAN ATAS / HERO -->
-        <section class="hero">
+            <ul>
+                <li>
+                    <a href="index.html" aria-current="page">
+                        Beranda
+                    </a>
+                </li>
 
+                <li>
+                    <a href="tentang.html">
+                        Tentang Kami
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#kontak">
+                        Kontak Singkat
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <!-- MAIN dg nama KONTEN-->
+    <main id="konten" class="page">
+        <!-- HERO-->
+        <section class="hero" aria-labelledby="hero-title">
             <div class="hero-content">
 
                 <p class="eyebrow">
                     SMART SNACK BRAND
                 </p>
 
-                <h1> NOURA Bites </h1>
+                <h1 id="hero-title">
+                    NOURA Bites
+                </h1>
 
                 <p class="hero-text">
                     Smart Snack for Smart Days
@@ -41,10 +74,11 @@
 
             <!-- ICON PRODUK -->
             <div class="hero-product-circle">
-
-                <div class="product-circle">
-                    <span>🍫</span>
-                </div>
+                <img 
+                    src="assets/images/noura-snack.svg" 
+                    alt="Produk NOURA Bites berupa camilan cokelat, almond, dan coconut"
+                    class="hero-image"
+                >
 
                 <p>
                     Delicious • Simple • Smart
@@ -73,10 +107,10 @@
                 </p>
             </div>
 
-            <ul class="products">
+            <div class="products">
 
                 <!-- PRODUK 1 -->
-                <li class="product-card">
+                <article class="product-card">
 
                     <div class="product-icon">
                         🍫
@@ -95,10 +129,10 @@
 
                         <strong> Rp15.000 </strong>
                     </div>
-                </li>
+                </article>
 
                 <!-- PRODUK 2 -->
-                <li class="product-card">
+                <article class="product-card">
 
                     <div class="product-icon">
                         🥥
@@ -117,10 +151,10 @@
 
                         <strong> Rp15.000 </strong>
                     </div>
-                </li>
+                </article>
 
                 <!-- PRODUK 3 -->
-                <li class="product-card featured">
+                <article class="product-card featured">
 
                     <div class="product-icon">
                         🍫
@@ -143,8 +177,8 @@
                         <strong> Rp20.000 </strong>
 
                     </div>
-                </li>
-            </ul>
+                </article>
+            </div>
         </section>
 
 
@@ -169,14 +203,41 @@
             </div>
         </section>
 
+        <!-- KONTAK SINGKAT-->
+        <section id="kontak" class="contact-section" aria-labelledby="kontak-title">
+            <div class="section-heading">
+                <p class="eyebrow">
+                 KONTAK KAMI
+                </p>
 
-        <!-- FOOTER -->
-        <footer>
-            <p>
-                © 2026 NOURA Bites. Smart Snack for Smart Days.
-            </p>
-        </footer>
+                <h2 id="kontak-title">
+                    Kontak Singkat
+                </h2>
+                
+                <p>
+                    <strong>Lokasi:</strong>
+                    Bojong, Pekalongan, Jawa Tengah
+                </p>
+                <p>
+                    <strong>Jam Layanan:</strong>
+                    Senin- Jumat, 09.00-17.00 WIB
+                </p>
+                <p>
+                    <strong>Kontak:</strong>
+                    <a href="https://wa.me/6289507775993" target="_blank" rel="noopener noreferrer">
+                        Hubungi NOURA Bites via WhatsApp
+                    </a>
+                </p>
+            </div>
+        </section>
     </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <p>
+            © 2026 NOURA Bites. Smart Snack for Smart Days.
+        </p>
+    </footer>
 
     <!-- JAVASCRIPT -->
     <script src="js/script.js"></script>
