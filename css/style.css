@@ -1,79 +1,181 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ==================================================
+   1. RESET DAN DASAR
+   ================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  line-height: 1.6;
-  color: #3b2618;
-  background-color: #fff8ef;
-  font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #3b2618;
+    background-color: #fff8ef;
+    font-family: Arial, sans-serif;
 }
 
 .page {
-  max-width: 1000px;
-  margin: 0 auto;
-  width: 90%;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.hero {
-  min-height: 560px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 70px;
-  padding: 60px 0;
+img {
+    max-width: 100%;
+    height: auto;
 }
 
-.hero-content{
-  width: 55%;
-  max-width: 580px;
+
+/* ==================================================
+   2. HEADER DAN NAVIGASI
+   ================================================== */
+
+.site-header {
+    padding: 18px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ead8c8;
 }
+
+.nav {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.brand {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #3b2618;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.nav a {
+    color: #765f4f;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    color: #9f4f1f;
+}
+
+.nav a[aria-current="page"] {
+    color: #9f4f1f;
+    font-weight: bold;
+}
+
+
+/* ==================================================
+   3. AKSESIBILITAS DAN FOCUS
+   ================================================== */
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    padding: 8px 12px;
+    color: white;
+    background-color: #3b2618;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 8px;
+    left: 8px;
+}
+
+a:focus-visible,
+button:focus-visible,
+audio:focus-visible {
+    outline: 3px solid #c56b2d;
+    outline-offset: 3px;
+}
+
+
+/* ==================================================
+   4. TEKS UMUM
+   ================================================== */
 
 .eyebrow {
-  display: inline-block;
-  margin-bottom: 15px;
-  color: #c56b2d;
-  font-size: 14px;
-  font-weight: bold;
-  letter-spacing: 2px;
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #c56b2d;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
-.hero h1{
-  font-size: 58px;
-  line-height: 1.1;
-  margin-bottom: 18px;
-  font-weight: 700;
+.section-heading {
+    max-width: 750px;
+    margin: 0 auto 40px;
+    text-align: center;
 }
 
-.hero-text{
-  font-size: 23px;
-  font-weight: bold;
-  margin-bottom: 14px;
+.section-heading h1 {
+    margin-bottom: 15px;
+    font-size: 42px;
+    line-height: 1.2;
 }
 
-.hero-description{
-  color: #765f4f;
-  max-width: 500px;
-  margin-bottom: 28px;
+.section-heading h2 {
+    margin-bottom: 12px;
+    font-size: 32px;
+    line-height: 1.2;
 }
 
-button {
-  color: white;
-  padding: 13px 22px;
-  border-radius: 10px;
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: #9f4f1f;
-  border: none;
-  transition: 0.3s;
+.section-heading > p:last-child {
+    color: #765f4f;
 }
 
-button:hover{
-  background-color: #9f4f1f;
-  transform: translateY(-2px);
+
+/* ==================================================
+   5. BERANDA - HERO
+   ================================================== */
+
+.hero {
+    min-height: 540px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 70px 0;
+}
+
+.hero-content {
+    width: 55%;
+    max-width: 580px;
+}
+
+.hero h1 {
+    margin-bottom: 18px;
+    font-size: 58px;
+    line-height: 1.1;
+}
+
+.hero-text {
+    margin-bottom: 14px;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.hero-description {
+    max-width: 500px;
+    margin-bottom: 28px;
+    color: #765f4f;
 }
 
 .hero-product-circle {
@@ -85,7 +187,7 @@ button:hover{
     text-align: center;
 }
 
-.hero-image{
+.hero-image {
     width: 280px;
     max-width: 100%;
     height: auto;
@@ -97,77 +199,75 @@ button:hover{
     font-size: 14px;
 }
 
+
+/* ==================================================
+   6. BUTTON
+   ================================================== */
+
+button {
+    padding: 13px 22px;
+    color: white;
+    background-color: #9f4f1f;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8d4319;
+}
+
+
+/* ==================================================
+   7. BERANDA - PRODUK
+   ================================================== */
+
 .products-section {
-    padding: 70px 0;
-}
-
-.section-heading {
-    text-align: center;
-    max-width: 750px;
-    margin: 0 auto 40px;
-}
-
-.section-heading h1 {
-    font-size: 42px;
-    line-height: 1.2;
-    margin-bottom: 15px;
-}
-.section-heading h2 {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-.section-heading > p:last-child {
-    color: #765f4f;
+    padding: 65px 0;
 }
 
 .products {
-    list-style: none;
-
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    gap: 25px;
+    list-style: none;
 }
 
 .product-card {
+    padding: 28px;
     background-color: white;
-    padding: 25px;
-    border-radius: 18px;
-
-    box-shadow: 0 8px 25px rgba(80, 45, 20, 0.08);
-
-    transition: 0.3s;
+    border: 1px solid #ead8c8;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(80, 45, 20, 0.07);
 }
 
 .product-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 30px rgba(80, 45, 20, 0.14);
+    transform: translateY(-3px);
 }
 
 .product-icon {
     width: 60px;
     height: 60px;
-
-    background-color: #fff0df;
-    border-radius: 15px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
-    font-size: 28px;
     margin-bottom: 20px;
+    background-color: #fff0df;
+    border-radius: 15px;
+    font-size: 28px;
 }
 
 .product-info h3 {
-    font-size: 21px;
     margin-bottom: 10px;
+    font-size: 21px;
 }
 
 .product-info p {
+    margin-bottom: 18px;
     color: #765f4f;
     font-size: 14px;
-    margin-bottom: 20px;
 }
 
 .product-info strong {
@@ -181,45 +281,30 @@ button:hover{
 
 .product-seller {
     display: inline-block;
-
+    margin-bottom: 12px;
+    padding: 5px 9px;
+    color: #9f4f1f;
     background-color: #fff0df;
-    color: #c56b2d;
-
+    border-radius: 20px;
     font-size: 11px;
     font-weight: bold;
-
-    padding: 5px 9px;
-    border-radius: 20px;
-
-    margin-bottom: 10px;
 }
 
-.page > .products-section > section{
-    margin-bottom: 35px;
-}
 
-.page > .products-section > section h2{
-    font-size: 28px;
-    margin-bottom: 10px;
-}
-
-.page > .products-section > section p{
-    color: #765f4f;
-}
+/* ==================================================
+   8. BERANDA - PROMO
+   ================================================== */
 
 .promo-section {
-    margin: 50px 0;
-    padding: 45px;
-
-    background-color: #3b2618;
-    color: white;
-
-    border-radius: 22px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 30px;
+    margin: 30px 0 55px;
+    padding: 40px;
+    color: white;
+    background-color: #3b2618;
+    border-radius: 20px;
 }
 
 .promo-section .eyebrow {
@@ -227,21 +312,308 @@ button:hover{
 }
 
 .promo-section h2 {
+    margin-bottom: 10px;
     font-size: 32px;
-    margin-bottom: 8px;
+    line-height: 1.3;
 }
 
 .promo-section p:last-child {
     color: #ead8c8;
 }
 
-footer {
-    text-align: center;
-    padding: 30px 0;
 
-    color: #8a6d58;
+/* ==================================================
+   9. KONTAK SINGKAT
+   ================================================== */
+
+.contact-section {
+    padding: 45px 0 60px;
+}
+
+.contact-section .section-heading {
+    max-width: 750px;
+    padding: 30px;
+    background-color: white;
+    border: 1px solid #ead8c8;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(80, 45, 20, 0.07);
+}
+
+.contact-section .section-heading p {
+    margin-bottom: 10px;
+    color: #765f4f;
+}
+
+.contact-section .section-heading strong {
+    color: #3b2618;
+}
+
+.contact-section .section-heading a {
+    color: #9f4f1f;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.contact-section .section-heading a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==================================================
+   10. HALAMAN TENTANG KAMI
+   ================================================== */
+
+.about-section {
+    padding: 65px 0;
+}
+
+.about-section > .section-heading {
+    margin-bottom: 40px;
+}
+
+.about-section > section {
+    margin-bottom: 24px;
+    padding: 28px;
+    background-color: white;
+    border: 1px solid #ead8c8;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(80, 45, 20, 0.07);
+}
+
+.about-section > section:last-child {
+    margin-bottom: 0;
+}
+
+.about-section h2 {
+    margin-bottom: 12px;
+    font-size: 25px;
+}
+
+.about-section h3 {
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.about-section p {
+    margin-bottom: 10px;
+    color: #765f4f;
+}
+
+
+/* ==================================================
+   11. HALAMAN PRODUK
+   ================================================== */
+
+.product-intro {
+    padding: 40px 0 25px;
+    max-width: 800px;
+}
+
+.product-intro h1 {
+    margin-bottom: 15px;
+    font-size: 42px;
+    line-height: 1.2;
+}
+
+.product-intro > p:last-child {
+    color: #765f4f;
+}
+
+
+/* KATEGORI PRODUK */
+
+.category-section {
+    margin-bottom: 20px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(80, 45, 20, 0.08);
+}
+
+.category-section h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.category-section ul {
+    margin-top: 15px;
+    padding: 0;
+    list-style: none;
+}
+
+.category-section li {
+    display: inline-block;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    padding: 8px 15px;
+    color: #9f4f1f;
+    background-color: #fff0df;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* KATALOG PRODUK */
+
+.catalog-section {
+    padding: 20px 0 50px;
+}
+
+.catalog-section h2 {
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+
+/* ==================================================
+   12. TABEL KATALOG
+   ================================================== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(80, 45, 20, 0.08);
+}
+
+caption {
+    margin-bottom: 10px;
+    color: #3b2618;
+    font-weight: bold;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 12px 14px;
+    text-align: left;
+    border: 1px solid #ead8c8;
+}
+
+thead th {
+    color: #3b2618;
+    background-color: #f3dfc9;
+}
+
+tbody th {
+    color: #3b2618;
+    background-color: #fffaf5;
+}
+
+tbody td {
+    color: #765f4f;
+    background-color: white;
+}
+
+tbody tr:hover td,
+tbody tr:hover th {
+    background-color: #fff0df;
+}
+
+
+/* ==================================================
+   13. HALAMAN GALERI
+   ================================================== */
+
+.gallery-intro {
+    padding: 40px 0;
+}
+
+.gallery-intro h1 {
+    margin-bottom: 15px;
+    font-size: 42px;
+    line-height: 1.2;
+}
+
+.gallery-intro > p:last-child {
+    color: #765f4f;
+}
+
+
+/* CARD PROSES PEMBUATAN */
+
+.gallery-process {
+    margin-bottom: 30px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(80, 45, 20, 0.08);
+}
+
+.gallery-process h2 {
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+
+/* GAMBAR GALERI */
+
+.gallery-process figure {
+    margin: 0;
+    padding: 0;
+}
+
+.gallery-process img {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+figcaption {
+    margin-top: 10px;
+    color: #765f4f;
+    line-height: 1.5;
+}
+
+
+/* AUDIO */
+
+.gallery-audio {
+    margin-bottom: 30px;
+}
+
+.gallery-audio h2 {
+    margin-bottom: 15px;
+    font-size: 26px;
+}
+
+#audio-description {
+    margin-bottom: 15px;
+    color: #765f4f;
+}
+
+audio {
+    width: 100%;
+    max-width: 700px;
+}
+
+
+/* ==================================================
+   14. FOOTER
+   ================================================== */
+
+.site-footer {
+    margin-top: 20px;
+    padding: 24px 20px;
+    color: white;
+    background-color: #3b2618;
+    text-align: center;
+}
+
+.site-footer p {
     font-size: 13px;
 }
+
+
+/* ==================================================
+   15. RESPONSIVE - TABLET
+   ================================================== */
 
 @media (max-width: 800px) {
 
@@ -250,9 +622,17 @@ footer {
         text-align: center;
     }
 
+    .hero-content {
+        width: 100%;
+    }
+
     .hero-description {
-        margin-left: auto;
         margin-right: auto;
+        margin-left: auto;
+    }
+
+    .hero-product-circle {
+        width: 100%;
     }
 
     .products {
@@ -266,7 +646,29 @@ footer {
 }
 
 
+/* ==================================================
+   16. RESPONSIVE - HP
+   ================================================== */
+
 @media (max-width: 500px) {
+
+    .page,
+    .nav {
+        width: 92%;
+    }
+
+    .nav li {
+        margin-right: 10px;
+        margin-bottom: 5px;
+    }
+
+    .nav a {
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 45px 0;
+    }
 
     .hero h1 {
         font-size: 45px;
@@ -276,6 +678,16 @@ footer {
         font-size: 20px;
     }
 
+    .section-heading h1,
+    .product-intro h1,
+    .gallery-intro h1 {
+        font-size: 32px;
+    }
+
+    .section-heading h2 {
+        font-size: 28px;
+    }
+
     .promo-section {
         padding: 30px 20px;
     }
@@ -283,156 +695,16 @@ footer {
     .promo-section h2 {
         font-size: 26px;
     }
-}
 
-/*=============================
-SEMANTIC HTML DAN NAVIGASI
-==============================*/
-.skip-link{
-    position: absolute;
-    left: -9999px;
-    padding: 8px 12px;
-    color: white;
-    background-color: #3b2618;
-    text-decoration: none;
-}
-
-.skip-link:focus{
-    top: 8px;
-    left: 8px;
-}
-
-.site-header{
-    padding: 16px 20px;
-    background-color: white;
-    border-bottom: 1px solid #ead8c8;
-}
-
-.nav{
-    max-width: 1000px;
-    width: 90%;
-    margin: 0 auto;
-}
-
-.brand{
-    display: inline-block;
-    margin-bottom: 8px;
-    color: #3b2618;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.nav ul{
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.nav li {
-    display: inline-block;
-    margin-right: 12px;
-}
-
-.nav a {
-    color: #765f4f;
-    text-decoration: none;
-}
-
-.nav a[aria-current="page"] {
-    color: #9f4f1f;
-    font-weight: bold;
-}
-
-a:focus-visible,
-button:focus-visible {
-    outline: 3px solid #c56b2d;
-    outline-offset: 3px;
-}
-
-.site-footer {
-    padding: 24px 20px;
-    color: white;
-    text-align: center;
-    background-color: #3b2618;
-}
-
-/* =============================
-   HALAMAN TENTANG KAMI
-   ============================= */
-
-#konten > .products-section > section {
-    background-color: white;
-    padding: 25px;
-    margin-bottom: 20px;
-    border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(80, 45, 20, 0.08);
-}
-
-#konten > .products-section > section h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-#konten > .products-section > section h3 {
-    font-size: 20px;
-    margin-top: 20px;
-    margin-bottom: 8px;
-}
-
-#konten > .products-section > section p {
-    color: #765f4f;
-    margin-bottom: 8px;
-}
-
-#konten > .products-section > section:last-child {
-    margin-bottom: 0;
-}
-
-/* Tampilan halaman Tentang Kami di layar kecil */
-@media (max-width: 500px) {
-
-    .section-heading h1 {
-        font-size: 32px;
+    .about-section > section,
+    .category-section,
+    .gallery-audio {
+        padding: 22px;
     }
 
-    #konten > .products-section > section {
-        padding: 20px;
+    th,
+    td {
+        padding: 9px 10px;
+        font-size: 14px;
     }
-
-}
-
-/* =============================
-   KONTAK SINGKAT
-   ============================= */
-
-.contact-section {
-    padding: 50px 0;
-}
-
-.contact-info {
-    background-color: white;
-    padding: 25px;
-    border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(80, 45, 20, 0.08);
-    max-width: 750px;
-    margin: 0 auto;
-}
-
-.contact-info p {
-    color: #765f4f;
-    margin-bottom: 12px;
-}
-
-.contact-info p:last-child {
-    margin-bottom: 0;
-}
-
-.contact-info a {
-    color: #9f4f1f;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.contact-info a:hover {
-    text-decoration: underline;
 }
