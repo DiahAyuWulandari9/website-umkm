@@ -11,7 +11,7 @@
 body {
     line-height: 1.6;
     color: #3b2618;
-    background-color: #fff8ef;
+    background-color: #f8f7ef;
     font-family: Arial, sans-serif;
 }
 
@@ -46,7 +46,7 @@ img {
 .brand {
     display: inline-block;
     margin-bottom: 12px;
-    color: #3b2618;
+    color: #355c3a;
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
@@ -64,17 +64,17 @@ img {
 }
 
 .nav a {
-    color: #765f4f;
+    color: #6f6256;
     font-size: 15px;
     text-decoration: none;
 }
 
 .nav a:hover {
-    color: #9f4f1f;
+    color: #4f7d55;
 }
 
 .nav a[aria-current="page"] {
-    color: #9f4f1f;
+    color: #4f7d55;
     font-weight: bold;
 }
 
@@ -113,7 +113,7 @@ audio:focus-visible {
 .eyebrow {
     display: inline-block;
     margin-bottom: 12px;
-    color: #c56b2d;
+    color: #5f8d65;
     font-size: 13px;
     font-weight: bold;
     letter-spacing: 2px;
@@ -151,12 +151,15 @@ audio:focus-visible {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 50px;
-    padding: 70px 0;
+    gap: 80px;
+    padding: 70px 55px;
+    margin-top: 30px;
+    background: linear-gradient(135deg, #f5efe3, #eaf2e8);
+    border-radius: 28px;
 }
 
 .hero-content {
-    width: 55%;
+    width: 48%;
     max-width: 580px;
 }
 
@@ -179,7 +182,7 @@ audio:focus-visible {
 }
 
 .hero-product-circle {
-    width: 40%;
+    width: 38%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -188,9 +191,11 @@ audio:focus-visible {
 }
 
 .hero-image {
-    width: 280px;
+    width: 300px;
     max-width: 100%;
     height: auto;
+    border-radius: 24px;
+    filter: drop-shadow(0 10px 18px rgba(60, 50, 40, 0.15));
 }
 
 .hero-product-circle > p {
@@ -207,7 +212,7 @@ audio:focus-visible {
 button {
     padding: 13px 22px;
     color: white;
-    background-color: #9f4f1f;
+    background-color: #4f7d55;
     border: none;
     border-radius: 10px;
     font-size: 15px;
@@ -216,7 +221,7 @@ button {
 }
 
 button:hover {
-    background-color: #8d4319;
+    background-color: #3f6745;
 }
 
 
@@ -237,14 +242,15 @@ button:hover {
 
 .product-card {
     padding: 28px;
-    background-color: white;
-    border: 1px solid #ead8c8;
-    border-radius: 16px;
-    box-shadow: 0 6px 18px rgba(80, 45, 20, 0.07);
+    background-color: #ffffff;
+    border: 1px solid #e1e5d9;
+    border-radius: 18px;
+    box-shadow: 0 8px 22px rgba(60, 80, 50, 0.08);
 }
 
 .product-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(60, 80, 50, 0.12);
 }
 
 .product-icon {
@@ -254,7 +260,7 @@ button:hover {
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
-    background-color: #fff0df;
+    background-color: #edf4e9;
     border-radius: 15px;
     font-size: 28px;
 }
@@ -271,7 +277,7 @@ button:hover {
 }
 
 .product-info strong {
-    color: #c56b2d;
+    color: #5f8d65;
     font-size: 19px;
 }
 
@@ -331,16 +337,16 @@ button:hover {
 }
 
 .contact-section .section-heading {
-    max-width: 750px;
-    padding: 30px;
+    max-width: 650px;
+    padding: 32px;
     background-color: white;
     border: 1px solid #ead8c8;
-    border-radius: 16px;
-    box-shadow: 0 6px 18px rgba(80, 45, 20, 0.07);
+    border-radius: 20px;
+    box-shadow: 0 8px 22px rgba(80, 45, 20, 0.07);
 }
 
 .contact-section .section-heading p {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     color: #765f4f;
 }
 
@@ -364,20 +370,20 @@ button:hover {
    ================================================== */
 
 .about-section {
-    padding: 65px 0;
+    padding: 55px 0 70px;
 }
 
 .about-section > .section-heading {
-    margin-bottom: 40px;
+    margin-bottom: 32px;
 }
 
 .about-section > section {
-    margin-bottom: 24px;
-    padding: 28px;
+    margin-bottom: 18px;
+    padding: 25px 28px;
     background-color: white;
     border: 1px solid #ead8c8;
-    border-radius: 16px;
-    box-shadow: 0 6px 18px rgba(80, 45, 20, 0.07);
+    border-radius: 18px;
+    box-shadow: 0 7px 20px rgba(06, 80, 50, 0.06);
 }
 
 .about-section > section:last-child {
@@ -385,12 +391,12 @@ button:hover {
 }
 
 .about-section h2 {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     font-size: 25px;
 }
 
 .about-section h3 {
-    margin-top: 20px;
+    margin-top: 18px;
     margin-bottom: 8px;
     font-size: 20px;
 }
@@ -707,4 +713,127 @@ audio {
         padding: 9px 10px;
         font-size: 14px;
     }
+}
+
+/* ==================================================
+   17. KONTAK FORM
+   ================================================== */
+#form-kontak {
+    width: 100%;
+    max-width: 750px;
+    margin: 20px auto 30px;
+    padding: 35px;
+    background-color: white;
+    border: 1px solid #e1e5d9;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(60, 50, 40, 0.08);
+}
+
+.field {
+    margin-bottom: 20px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 7px;
+    color: #3b2618;
+    font-weight: 600;
+}
+
+/* INPUT, SELECT, TEXTAREA */
+#form-kontak .field input,
+#form-kontak select,
+#form-kontak textarea {
+    width: 100%;
+    padding: 12px 14px;
+    color: #3b2618;
+    background-color: #fcfcf8;
+    border: 1px solid #d8d8cc;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+#form-kontak .field input:focus,
+#form-kontak select:focus,
+#form-kontak textarea:focus {
+    border-color: #5f8d65;
+    outline: 3px solid #dcebdc;
+}
+
+/* FIELDSET */
+#form-kontak fieldset {
+    margin: 0 0 22px;
+    padding: 18px 20px;
+    border: 1px solid #dfe5d8;
+    border-radius: 12px;
+    background-color: #fbfcf8;
+}
+
+#form-kontak legend {
+    padding: 0 8px;
+    color: #4f7d55;
+    font-weight: bold;
+}
+
+/* RADIO BUTTON */
+#form-kontak fieldset label {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    color: #3b2618;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+#form-kontak fieldset input[type="radio"] {
+    width: auto;
+    padding: 0;
+    margin: 0 8px 0 0;
+    border: none;
+    background: transparent;
+    border-radius: 0;
+    appearance: auto;
+}
+
+/* TEXTAREA */
+#form-kontak textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+/* BUTTON */
+#form-kontak button {
+    margin-top: 5px;
+}
+
+/* PREVIEW FORM */
+.preview-section {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto 60px;
+    padding: 35px;
+    background-color: white;
+    border: 1px solid #e1e5d9;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(60, 50, 40, 0.08);
+}
+
+.preview-section h2 {
+    margin: 0 0 15px;
+    color: #3b2618;
+    font-size: 25px;
+}
+
+
+/* ISI PREVIEW */
+#preview-form {
+    min-height: 60px;
+    margin: 0;
+    padding: 18px;
+    white-space: pre-wrap;
+    color: #3b2618;
+    background-color: #f4f7ef;
+    border: 1px solid #dce5d5;
+    border-radius: 12px;
 }
