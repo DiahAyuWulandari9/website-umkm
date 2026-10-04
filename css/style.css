@@ -1,8 +1,31 @@
+:root {
+    --color-primary: #4f7d55;
+    --color-primary-strong: #3f6745;
+    --color-text: #3b2618;
+    --color-muted: #765f4f;
+    --color-surface: #ffffff;
+    --color-surface-soft: #f8f7ef;
+    --color-border: #ead8c8;
+    --color-focus: #c56b2d;
+
+    --space-1: 0.5rem;
+    --space-2: 0.75rem;
+    --space-3: 1rem;
+    --space-4: 1.5rem;
+    --space-5: 2rem;
+
+    --radius-sm: 0.5rem;
+    --radius-md: 1rem;
+    --shadow-card: 0 8px 22px rgba(60, 80, 50, 0.08);
+}
+
 /* ==================================================
    1. RESET DAN DASAR
    ================================================== */
 
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,8 +33,8 @@
 
 body {
     line-height: 1.6;
-    color: #3b2618;
-    background-color: #f8f7ef;
+    color: var(--color-text);
+    background-color: var(--color-surface-soft);
     font-family: Arial, sans-serif;
 }
 
@@ -33,7 +56,7 @@ img {
 
 .site-header {
     padding: 18px 20px;
-    background-color: #ffffff;
+    background-color: var(--color-surface);
     border-bottom: 1px solid #ead8c8;
 }
 
@@ -70,11 +93,11 @@ img {
 }
 
 .nav a:hover {
-    color: #4f7d55;
+    color: var(--color-primary);
 }
 
 .nav a[aria-current="page"] {
-    color: #4f7d55;
+    color: var(--color-primary);
     font-weight: bold;
 }
 
@@ -88,7 +111,7 @@ img {
     left: -9999px;
     padding: 8px 12px;
     color: white;
-    background-color: #3b2618;
+    background-color: var(--color-text);
     text-decoration: none;
     z-index: 1000;
 }
@@ -101,7 +124,7 @@ img {
 a:focus-visible,
 button:focus-visible,
 audio:focus-visible {
-    outline: 3px solid #c56b2d;
+    outline: 3px solid var(--color-focus);
     outline-offset: 3px;
 }
 
@@ -138,7 +161,7 @@ audio:focus-visible {
 }
 
 .section-heading > p:last-child {
-    color: #765f4f;
+    color: var(--color-muted);
 }
 
 
@@ -178,7 +201,7 @@ audio:focus-visible {
 .hero-description {
     max-width: 500px;
     margin-bottom: 28px;
-    color: #765f4f;
+    color: var(--color-muted);
 }
 
 .hero-product-circle {
@@ -212,16 +235,16 @@ audio:focus-visible {
 button {
     padding: 13px 22px;
     color: white;
-    background-color: #4f7d55;
+    background-color: var(--color-primary);
     border: none;
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #3f6745;
+    background-color: var(--color-primary-strong);
 }
 
 
@@ -234,18 +257,17 @@ button:hover {
 }
 
 .products {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    display: block;
     list-style: none;
 }
 
 .product-card {
+    margin-bottom: 20px;
     padding: 28px;
-    background-color: #ffffff;
+    background-color: var(--color-surface);
     border: 1px solid #e1e5d9;
-    border-radius: 18px;
-    box-shadow: 0 8px 22px rgba(60, 80, 50, 0.08);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
 }
 
 .product-card:hover {
@@ -272,7 +294,7 @@ button:hover {
 
 .product-info p {
     margin-bottom: 18px;
-    color: #765f4f;
+    color: var(--color-muted);
     font-size: 14px;
 }
 
@@ -291,7 +313,7 @@ button:hover {
     padding: 5px 9px;
     color: #9f4f1f;
     background-color: #fff0df;
-    border-radius: 20px;
+    border-radius: var(--radius-md);
     font-size: 11px;
     font-weight: bold;
 }
@@ -309,8 +331,8 @@ button:hover {
     margin: 30px 0 55px;
     padding: 40px;
     color: white;
-    background-color: #3b2618;
-    border-radius: 20px;
+    background-color: var(--color-text);
+    border-radius: var(--radius-md);
 }
 
 .promo-section .eyebrow {
@@ -339,19 +361,19 @@ button:hover {
 .contact-section .section-heading {
     max-width: 650px;
     padding: 32px;
-    background-color: white;
-    border: 1px solid #ead8c8;
-    border-radius: 20px;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
     box-shadow: 0 8px 22px rgba(80, 45, 20, 0.07);
 }
 
 .contact-section .section-heading p {
     margin-bottom: 12px;
-    color: #765f4f;
+    color: var(--color-muted);
 }
 
 .contact-section .section-heading strong {
-    color: #3b2618;
+    color: var(--color-text);
 }
 
 .contact-section .section-heading a {
@@ -380,9 +402,9 @@ button:hover {
 .about-section > section {
     margin-bottom: 18px;
     padding: 25px 28px;
-    background-color: white;
-    border: 1px solid #ead8c8;
-    border-radius: 18px;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
     box-shadow: 0 7px 20px rgba(06, 80, 50, 0.06);
 }
 
@@ -403,7 +425,7 @@ button:hover {
 
 .about-section p {
     margin-bottom: 10px;
-    color: #765f4f;
+    color: var(--color-muted);
 }
 
 
@@ -423,7 +445,7 @@ button:hover {
 }
 
 .product-intro > p:last-child {
-    color: #765f4f;
+    color: var(--color-muted);
 }
 
 
@@ -432,8 +454,8 @@ button:hover {
 .category-section {
     margin-bottom: 20px;
     padding: 30px;
-    background-color: white;
-    border-radius: 16px;
+    background-color: var(--color-surface);
+    border-radius: var(--radius-md);
     box-shadow: 0 8px 25px rgba(80, 45, 20, 0.08);
 }
 
@@ -455,7 +477,7 @@ button:hover {
     padding: 8px 15px;
     color: #9f4f1f;
     background-color: #fff0df;
-    border-radius: 20px;
+    border-radius: var(--radius-md);
     font-size: 14px;
     font-weight: bold;
 }
@@ -481,14 +503,14 @@ table {
     width: 100%;
     border-collapse: collapse;
     overflow: hidden;
-    background-color: white;
-    border-radius: 12px;
+    background-color: var(--color-surface);
+    border-radius: var(--radius-sm);
     box-shadow: 0 8px 25px rgba(80, 45, 20, 0.08);
 }
 
 caption {
     margin-bottom: 10px;
-    color: #3b2618;
+    color: var(--color-text);
     font-weight: bold;
     text-align: left;
 }
@@ -497,22 +519,22 @@ th,
 td {
     padding: 12px 14px;
     text-align: left;
-    border: 1px solid #ead8c8;
+    border: 1px solid var(--color-border);
 }
 
 thead th {
-    color: #3b2618;
+    color: var(--color-text);
     background-color: #f3dfc9;
 }
 
 tbody th {
-    color: #3b2618;
+    color: var(--color-text);
     background-color: #fffaf5;
 }
 
 tbody td {
-    color: #765f4f;
-    background-color: white;
+    color: var(--color-muted);
+    background-color: var(--color-surface);
 }
 
 tbody tr:hover td,
@@ -536,7 +558,7 @@ tbody tr:hover th {
 }
 
 .gallery-intro > p:last-child {
-    color: #765f4f;
+    color: var(--color-muted);
 }
 
 
@@ -545,8 +567,8 @@ tbody tr:hover th {
 .gallery-process {
     margin-bottom: 30px;
     padding: 30px;
-    background-color: white;
-    border-radius: 16px;
+    background-color: var(--color-surface);
+    border-radius: var(--radius-md);
     box-shadow: 0 8px 25px rgba(80, 45, 20, 0.08);
 }
 
@@ -568,12 +590,12 @@ tbody tr:hover th {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
 }
 
 figcaption {
     margin-top: 10px;
-    color: #765f4f;
+    color: var(--color-muted);
     line-height: 1.5;
 }
 
@@ -591,7 +613,7 @@ figcaption {
 
 #audio-description {
     margin-bottom: 15px;
-    color: #765f4f;
+    color: var(--color-muted);
 }
 
 audio {
@@ -608,7 +630,7 @@ audio {
     margin-top: 20px;
     padding: 24px 20px;
     color: white;
-    background-color: #3b2618;
+    background-color: var(--color-text);
     text-align: center;
 }
 
@@ -639,10 +661,6 @@ audio {
 
     .hero-product-circle {
         width: 100%;
-    }
-
-    .products {
-        grid-template-columns: 1fr;
     }
 
     .promo-section {
@@ -723,9 +741,9 @@ audio {
     max-width: 750px;
     margin: 20px auto 30px;
     padding: 35px;
-    background-color: white;
+    background-color: var(--color-surface);
     border: 1px solid #e1e5d9;
-    border-radius: 20px;
+    border-radius: var(--radius-md);
     box-shadow: 0 8px 25px rgba(60, 50, 40, 0.08);
 }
 
@@ -736,7 +754,7 @@ audio {
 .field label {
     display: block;
     margin-bottom: 7px;
-    color: #3b2618;
+    color: var(--color-text);
     font-weight: 600;
 }
 
@@ -746,10 +764,10 @@ audio {
 #form-kontak textarea {
     width: 100%;
     padding: 12px 14px;
-    color: #3b2618;
+    color: var(--color-text);
     background-color: #fcfcf8;
     border: 1px solid #d8d8cc;
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
     font-family: Arial, sans-serif;
     font-size: 15px;
 }
@@ -766,13 +784,13 @@ audio {
     margin: 0 0 22px;
     padding: 18px 20px;
     border: 1px solid #dfe5d8;
-    border-radius: 12px;
+    border-radius: var(--radius-sm);
     background-color: #fbfcf8;
 }
 
 #form-kontak legend {
     padding: 0 8px;
-    color: #4f7d55;
+    color: var(--color-primary);
     font-weight: bold;
 }
 
@@ -781,7 +799,7 @@ audio {
     display: flex;
     align-items: center;
     margin: 10px 0;
-    color: #3b2618;
+    color: var(--color-text);
     font-weight: normal;
     cursor: pointer;
 }
@@ -813,15 +831,15 @@ audio {
     max-width: 750px;
     margin: 0 auto 60px;
     padding: 35px;
-    background-color: white;
+    background-color: var(--color-surface);
     border: 1px solid #e1e5d9;
-    border-radius: 20px;
+    border-radius: var(--radius-md);
     box-shadow: 0 8px 25px rgba(60, 50, 40, 0.08);
 }
 
 .preview-section h2 {
     margin: 0 0 15px;
-    color: #3b2618;
+    color: var(--color-text);
     font-size: 25px;
 }
 
@@ -832,8 +850,8 @@ audio {
     margin: 0;
     padding: 18px;
     white-space: pre-wrap;
-    color: #3b2618;
+    color: var(--color-text);
     background-color: #f4f7ef;
     border: 1px solid #dce5d5;
-    border-radius: 12px;
+    border-radius: var(--radius-sm);
 }
