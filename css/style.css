@@ -1,23 +1,38 @@
 :root {
-    --color-primary: #4f7d55;
-    --color-primary-strong: #3f6745;
+    /* WARNA */
+    --color-primary: #5f8064;
+    --color-primary-strong: #456349;
     --color-text: #3b2618;
     --color-muted: #765f4f;
     --color-surface: #ffffff;
     --color-surface-soft: #f8f7ef;
     --color-border: #ead8c8;
-    --color-focus: #c56b2d;
+    --color-focus: #9a4f1f;
+    --color-accent: #d97706;
 
+    /* STATUS */
+    --color-success: #166534;
+    --color-success-soft: #f0fdf4;
+    --color-danger: #b91c1c;
+    --color-danger-soft: #fef2f2;
+
+    /* SPACING */
     --space-1: 0.5rem;
     --space-2: 0.75rem;
     --space-3: 1rem;
     --space-4: 1.5rem;
     --space-5: 2rem;
+    --space-6: 3rem;
 
+    /* RADIUS */
     --radius-sm: 0.5rem;
     --radius-md: 1rem;
+    --radius-lg: 1.5rem;
+
+    /* SHADOW */
     --shadow-card: 0 8px 22px rgba(60, 80, 50, 0.08);
 }
+
 
 /* ==================================================
    1. RESET DAN DASAR
@@ -57,37 +72,46 @@ img {
 .site-header {
     padding: 18px 20px;
     background-color: var(--color-surface);
-    border-bottom: 1px solid #ead8c8;
+    border-bottom: 1px solid var(--color-border);
 }
 
 .nav {
     width: 90%;
     max-width: 1000px;
     margin: 0 auto;
+
+    /* FLEXBOX */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
 }
 
 .brand {
     display: inline-block;
-    margin-bottom: 12px;
-    color: #355c3a;
+    margin-bottom: 0;
+    color: var(--color-primary-strong);
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
 }
 
 .nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
 .nav li {
-    display: inline-block;
-    margin-right: 20px;
+    margin: 0;
 }
 
 .nav a {
-    color: #6f6256;
+    color: var(--color-muted);
     font-size: 15px;
     text-decoration: none;
 }
@@ -109,11 +133,13 @@ img {
 .skip-link {
     position: absolute;
     left: -9999px;
+    z-index: 1000;
+
     padding: 8px 12px;
+
     color: white;
     background-color: var(--color-text);
     text-decoration: none;
-    z-index: 1000;
 }
 
 .skip-link:focus {
@@ -136,7 +162,8 @@ audio:focus-visible {
 .eyebrow {
     display: inline-block;
     margin-bottom: 12px;
-    color: #5f8d65;
+
+    color: var(--color-primary);
     font-size: 13px;
     font-weight: bold;
     letter-spacing: 2px;
@@ -166,23 +193,49 @@ audio:focus-visible {
 
 
 /* ==================================================
-   5. BERANDA - HERO
+   5. BUTTON UMUM
+   ================================================== */
+
+button {
+    padding: 13px 22px;
+
+    color: white;
+    background-color: var(--color-primary);
+
+    border: none;
+    border-radius: var(--radius-sm);
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--color-primary-strong);
+}
+
+
+/* ==================================================
+   6. BERANDA - HERO
    ================================================== */
 
 .hero {
     min-height: 540px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 80px;
-    padding: 70px 55px;
     margin-top: 30px;
+    padding: var(--space-6);
+
+    /* GRID */
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: var(--space-4);
+
     background: linear-gradient(135deg, #f5efe3, #eaf2e8);
-    border-radius: 28px;
+    border-radius: var(--radius-lg);
 }
 
 .hero-content {
-    width: 48%;
     max-width: 580px;
 }
 
@@ -194,6 +247,7 @@ audio:focus-visible {
 
 .hero-text {
     margin-bottom: 14px;
+
     font-size: 23px;
     font-weight: bold;
 }
@@ -201,50 +255,17 @@ audio:focus-visible {
 .hero-description {
     max-width: 500px;
     margin-bottom: 28px;
+
     color: var(--color-muted);
 }
 
-.hero-product-circle {
-    width: 38%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
 .hero-image {
-    width: 300px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 300px;
     height: auto;
-    border-radius: 24px;
+
+    border-radius: var(--radius-md);
     filter: drop-shadow(0 10px 18px rgba(60, 50, 40, 0.15));
-}
-
-.hero-product-circle > p {
-    margin-top: 16px;
-    color: #8a6d58;
-    font-size: 14px;
-}
-
-
-/* ==================================================
-   6. BUTTON
-   ================================================== */
-
-button {
-    padding: 13px 22px;
-    color: white;
-    background-color: var(--color-primary);
-    border: none;
-    border-radius: var(--radius-sm);
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: var(--color-primary-strong);
 }
 
 
@@ -258,14 +279,18 @@ button:hover {
 
 .products {
     display: block;
-    list-style: none;
 }
 
 .product-card {
-    margin-bottom: 20px;
-    padding: 28px;
+    margin-bottom: var(--space-3);
+    padding: var(--space-4);
+
+    /* FLEXBOX */
+    display: flex;
+    flex-direction: column;
+
     background-color: var(--color-surface);
-    border: 1px solid #e1e5d9;
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-card);
 }
@@ -278,12 +303,16 @@ button:hover {
 .product-icon {
     width: 60px;
     height: 60px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     margin-bottom: 20px;
-    background-color: #edf4e9;
-    border-radius: 15px;
+
+    background-color: var(--color-surface-soft);
+    border-radius: var(--radius-sm);
+
     font-size: 28px;
 }
 
@@ -294,26 +323,31 @@ button:hover {
 
 .product-info p {
     margin-bottom: 18px;
+
     color: var(--color-muted);
     font-size: 14px;
 }
 
 .product-info strong {
-    color: #5f8d65;
+    color: var(--color-primary);
     font-size: 19px;
 }
 
 .product-card.featured {
-    border: 2px solid #e2a36d;
+    border: 2px solid var(--color-accent);
 }
 
 .product-seller {
     display: inline-block;
+
     margin-bottom: 12px;
     padding: 5px 9px;
-    color: #9f4f1f;
-    background-color: #fff0df;
+
+    color: var(--color-primary-strong);
+    background-color: var(--color-surface-soft);
+
     border-radius: var(--radius-md);
+
     font-size: 11px;
     font-weight: bold;
 }
@@ -324,12 +358,15 @@ button:hover {
    ================================================== */
 
 .promo-section {
+    margin: 30px 0 55px;
+    padding: 40px;
+
+    /* FLEXBOX */
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 30px;
-    margin: 30px 0 55px;
-    padding: 40px;
+
     color: white;
     background-color: var(--color-text);
     border-radius: var(--radius-md);
@@ -351,7 +388,7 @@ button:hover {
 
 
 /* ==================================================
-   9. KONTAK SINGKAT
+   9. BERANDA - KONTAK SINGKAT
    ================================================== */
 
 .contact-section {
@@ -361,6 +398,7 @@ button:hover {
 .contact-section .section-heading {
     max-width: 650px;
     padding: 32px;
+
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
@@ -377,7 +415,7 @@ button:hover {
 }
 
 .contact-section .section-heading a {
-    color: #9f4f1f;
+    color: var(--color-focus);
     font-weight: bold;
     text-decoration: none;
 }
@@ -402,10 +440,11 @@ button:hover {
 .about-section > section {
     margin-bottom: 18px;
     padding: 25px 28px;
+
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
-    box-shadow: 0 7px 20px rgba(06, 80, 50, 0.06);
+    box-shadow: 0 7px 20px rgba(6, 80, 50, 0.06);
 }
 
 .about-section > section:last-child {
@@ -434,8 +473,8 @@ button:hover {
    ================================================== */
 
 .product-intro {
-    padding: 40px 0 25px;
     max-width: 800px;
+    padding: 40px 0 25px;
 }
 
 .product-intro h1 {
@@ -454,6 +493,7 @@ button:hover {
 .category-section {
     margin-bottom: 20px;
     padding: 30px;
+
     background-color: var(--color-surface);
     border-radius: var(--radius-md);
     box-shadow: 0 8px 25px rgba(80, 45, 20, 0.08);
@@ -472,21 +512,152 @@ button:hover {
 
 .category-section li {
     display: inline-block;
+
     margin-right: 8px;
     margin-bottom: 8px;
     padding: 8px 15px;
-    color: #9f4f1f;
+
+    color: var(--color-focus);
     background-color: #fff0df;
+
     border-radius: var(--radius-md);
+
     font-size: 14px;
     font-weight: bold;
+}
+
+
+
+/* PRODUK PILIHAN - GRID */
+
+.featured-products {
+    margin-bottom: 24px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: var(--space-4);
+}
+
+.product-grid .product-card {
+    position: relative;
+    min-width: 0;
+    min-height: 245px;
+    height: 100%;
+    margin-bottom: 0;
+    padding: var(--space-4);
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-grid .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(60, 80, 50, 0.12);
+}
+
+.product-grid .product-card h3 {
+    margin-top: var(--space-2);
+    margin-bottom: var(--space-1);
+    font-size: 19px;
+    line-height: 1.35;
+}
+
+.product-grid .product-card p {
+    flex: 1;
+    margin-bottom: var(--space-4);
+    color: var(--color-muted);
+    font-size: 15px;
+}
+
+/* LABEL PRODUK */
+
+.product-badge {
+    align-self: flex-start;
+    padding: 5px 12px;
+
+    color: var(--color-primary-strong);
+    background-color: var(--color-success-soft);
+
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+}
+
+/* KHUSUS LABEL BEST SELLER */
+
+.product-grid .product-card:nth-child(3) {
+    border-color: var(--color-primary);
+    border-width: 1.5px;
+}
+
+.product-grid .product-card:nth-child(3) .product-badge {
+    position: absolute;
+    top: -13px;
+    left: 20px;
+
+    padding: 6px 14px;
+    color: white;
+    background-color: var(--color-primary-strong);
+    border: 2px solid var(--color-surface);
+    box-shadow: 0 4px 10px rgba(60, 80, 50, 0.15);
+}
+
+/* HARGA DAN TOMBOL */
+
+.card-actions {
+    margin-top: auto;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+.card-actions strong {
+    color: var(--color-text);
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.card-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 9px 12px;
+
+    color: white;
+    background-color: var(--color-primary);
+    border-radius: var(--radius-sm);
+
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition: background-color 0.2s ease;
+}
+
+.card-actions a:hover {
+    background-color: var(--color-primary-strong);
 }
 
 
 /* KATALOG PRODUK */
 
 .catalog-section {
-    padding: 20px 0 50px;
+    padding: 8px 0 50px;
 }
 
 .catalog-section h2 {
@@ -501,8 +672,10 @@ button:hover {
 
 table {
     width: 100%;
+
     border-collapse: collapse;
     overflow: hidden;
+
     background-color: var(--color-surface);
     border-radius: var(--radius-sm);
     box-shadow: 0 8px 25px rgba(80, 45, 20, 0.08);
@@ -510,6 +683,7 @@ table {
 
 caption {
     margin-bottom: 10px;
+
     color: var(--color-text);
     font-weight: bold;
     text-align: left;
@@ -518,7 +692,9 @@ caption {
 th,
 td {
     padding: 12px 14px;
+
     text-align: left;
+
     border: 1px solid var(--color-border);
 }
 
@@ -562,11 +738,22 @@ tbody tr:hover th {
 }
 
 
+/* GRID GALERI */
+
+.gallery-grid {
+    /* GRID */
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3);
+}
+
+
 /* CARD PROSES PEMBUATAN */
 
 .gallery-process {
     margin-bottom: 30px;
     padding: 30px;
+
     background-color: var(--color-surface);
     border-radius: var(--radius-md);
     box-shadow: 0 8px 25px rgba(80, 45, 20, 0.08);
@@ -587,14 +774,18 @@ tbody tr:hover th {
 
 .gallery-process img {
     display: block;
+
     width: 100%;
     max-width: 800px;
+
     margin: 0 auto;
+
     border-radius: var(--radius-sm);
 }
 
 figcaption {
     margin-top: 10px;
+
     color: var(--color-muted);
     line-height: 1.5;
 }
@@ -623,14 +814,260 @@ audio {
 
 
 /* ==================================================
-   14. FOOTER
+   14. HALAMAN KONTAK - LAYOUT P06
+   ================================================== */
+
+/* GRID UTAMA HALAMAN KONTAK */
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    align-items: start;
+    gap: var(--space-4);
+    margin-top: var(--space-5);
+}
+
+/* INFORMASI KONTAK */
+
+.contact-layout .about-section {
+    padding: var(--space-4);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+}
+
+.contact-layout .about-section h1 {
+    margin-bottom: var(--space-3);
+    font-size: 38px;
+    line-height: 1.2;
+}
+
+.contact-layout .about-section p {
+    margin-bottom: 0;
+    color: var(--color-muted);
+}
+
+
+/* KELOMPOK PILIHAN FORM */
+
+/* FLEXBOX */
+.choice-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+
+/* FORM KONTAK */
+
+#form-kontak {
+    width: 100%;
+    max-width: none;
+
+    margin: 0;
+    padding: 35px;
+
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: 0 8px 25px rgba(60, 50, 40, 0.08);
+}
+
+.field {
+    margin-bottom: 20px;
+}
+
+.field label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+
+/* INPUT, SELECT, TEXTAREA */
+
+#form-kontak .field input,
+#form-kontak select,
+#form-kontak textarea {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    color: var(--color-text);
+    background-color: var(--color-surface-soft);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+#form-kontak .field input:focus,
+#form-kontak select:focus,
+#form-kontak textarea:focus {
+    border-color: var(--color-primary);
+    outline: 3px solid var(--color-focus);
+}
+
+
+/* FIELDSET */
+
+#form-kontak fieldset {
+    margin: 0 0 22px;
+    padding: 18px 20px;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+
+    background-color: #fbfcf8;
+}
+
+#form-kontak legend {
+    padding: 0 8px;
+
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+
+/* RADIO BUTTON */
+
+#form-kontak fieldset label {
+    display: flex;
+    align-items: center;
+
+    margin: 10px 0;
+
+    color: var(--color-text);
+    font-weight: normal;
+
+    cursor: pointer;
+}
+
+#form-kontak fieldset input[type="radio"] {
+    width: auto;
+
+    margin: 0 8px 0 0;
+    padding: 0;
+
+    border: none;
+    background: transparent;
+    border-radius: 0;
+
+    appearance: auto;
+}
+
+
+/* TEXTAREA */
+
+#form-kontak textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+
+/* BUTTON FORM */
+
+#form-kontak button {
+    margin-top: 5px;
+}
+
+
+/* ==================================================
+   15. PREVIEW FORM
+   ================================================== */
+
+.preview-section {
+    width: 100%;
+    max-width: 750px;
+
+    margin: 0 auto 60px;
+    padding: 35px;
+
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: 0 8px 25px rgba(60, 50, 40, 0.08);
+}
+
+.preview-section h2 {
+    margin: 0 0 15px;
+
+    color: var(--color-text);
+    font-size: 25px;
+}
+
+#preview-form {
+    min-height: 60px;
+    margin: 0;
+    padding: 18px;
+
+    white-space: pre-wrap;
+
+    color: var(--color-text);
+    background-color: #f4f7ef;
+
+    border: 1px solid #dce5d5;
+    border-radius: var(--radius-sm);
+}
+
+
+/* ==================================================
+   16. STATUS FORM
+   ================================================== */
+
+.status-success {
+    padding: var(--space-3);
+
+    color: var(--color-success);
+    background-color: var(--color-success-soft);
+
+    border: 1px solid var(--color-success);
+    border-radius: var(--radius-sm);
+}
+
+.status-danger {
+    padding: var(--space-3);
+
+    color: var(--color-danger);
+    background-color: var(--color-danger-soft);
+
+    border: 1px solid var(--color-danger);
+    border-radius: var(--radius-sm);
+}
+
+
+/* OVERRIDE STATUS PREVIEW */
+
+#preview-form.status-success {
+    color: var(--color-success);
+    background-color: var(--color-success-soft);
+    border-color: var(--color-success);
+}
+
+#preview-form.status-danger {
+    color: var(--color-danger);
+    background-color: var(--color-danger-soft);
+    border-color: var(--color-danger);
+}
+
+
+/* ==================================================
+   17. FOOTER
    ================================================== */
 
 .site-footer {
     margin-top: 20px;
     padding: 24px 20px;
+
     color: white;
     background-color: var(--color-text);
+
     text-align: center;
 }
 
@@ -640,13 +1077,12 @@ audio {
 
 
 /* ==================================================
-   15. RESPONSIVE - TABLET
+   18. RESPONSIVE - TABLET
    ================================================== */
 
 @media (max-width: 800px) {
 
     .hero {
-        flex-direction: column;
         text-align: center;
     }
 
@@ -659,10 +1095,6 @@ audio {
         margin-left: auto;
     }
 
-    .hero-product-circle {
-        width: 100%;
-    }
-
     .promo-section {
         flex-direction: column;
         text-align: center;
@@ -671,7 +1103,7 @@ audio {
 
 
 /* ==================================================
-   16. RESPONSIVE - HP
+   19. RESPONSIVE - HP
    ================================================== */
 
 @media (max-width: 500px) {
@@ -681,8 +1113,13 @@ audio {
         width: 92%;
     }
 
+    .nav {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
     .nav li {
-        margin-right: 10px;
+        margin-right: 0;
         margin-bottom: 5px;
     }
 
@@ -731,127 +1168,4 @@ audio {
         padding: 9px 10px;
         font-size: 14px;
     }
-}
-
-/* ==================================================
-   17. KONTAK FORM
-   ================================================== */
-#form-kontak {
-    width: 100%;
-    max-width: 750px;
-    margin: 20px auto 30px;
-    padding: 35px;
-    background-color: var(--color-surface);
-    border: 1px solid #e1e5d9;
-    border-radius: var(--radius-md);
-    box-shadow: 0 8px 25px rgba(60, 50, 40, 0.08);
-}
-
-.field {
-    margin-bottom: 20px;
-}
-
-.field label {
-    display: block;
-    margin-bottom: 7px;
-    color: var(--color-text);
-    font-weight: 600;
-}
-
-/* INPUT, SELECT, TEXTAREA */
-#form-kontak .field input,
-#form-kontak select,
-#form-kontak textarea {
-    width: 100%;
-    padding: 12px 14px;
-    color: var(--color-text);
-    background-color: #fcfcf8;
-    border: 1px solid #d8d8cc;
-    border-radius: var(--radius-sm);
-    font-family: Arial, sans-serif;
-    font-size: 15px;
-}
-
-#form-kontak .field input:focus,
-#form-kontak select:focus,
-#form-kontak textarea:focus {
-    border-color: #5f8d65;
-    outline: 3px solid #dcebdc;
-}
-
-/* FIELDSET */
-#form-kontak fieldset {
-    margin: 0 0 22px;
-    padding: 18px 20px;
-    border: 1px solid #dfe5d8;
-    border-radius: var(--radius-sm);
-    background-color: #fbfcf8;
-}
-
-#form-kontak legend {
-    padding: 0 8px;
-    color: var(--color-primary);
-    font-weight: bold;
-}
-
-/* RADIO BUTTON */
-#form-kontak fieldset label {
-    display: flex;
-    align-items: center;
-    margin: 10px 0;
-    color: var(--color-text);
-    font-weight: normal;
-    cursor: pointer;
-}
-
-#form-kontak fieldset input[type="radio"] {
-    width: auto;
-    padding: 0;
-    margin: 0 8px 0 0;
-    border: none;
-    background: transparent;
-    border-radius: 0;
-    appearance: auto;
-}
-
-/* TEXTAREA */
-#form-kontak textarea {
-    min-height: 130px;
-    resize: vertical;
-}
-
-/* BUTTON */
-#form-kontak button {
-    margin-top: 5px;
-}
-
-/* PREVIEW FORM */
-.preview-section {
-    width: 100%;
-    max-width: 750px;
-    margin: 0 auto 60px;
-    padding: 35px;
-    background-color: var(--color-surface);
-    border: 1px solid #e1e5d9;
-    border-radius: var(--radius-md);
-    box-shadow: 0 8px 25px rgba(60, 50, 40, 0.08);
-}
-
-.preview-section h2 {
-    margin: 0 0 15px;
-    color: var(--color-text);
-    font-size: 25px;
-}
-
-
-/* ISI PREVIEW */
-#preview-form {
-    min-height: 60px;
-    margin: 0;
-    padding: 18px;
-    white-space: pre-wrap;
-    color: var(--color-text);
-    background-color: #f4f7ef;
-    border: 1px solid #dce5d5;
-    border-radius: var(--radius-sm);
 }
