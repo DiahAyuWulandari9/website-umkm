@@ -65,6 +65,7 @@ img {
 }
 
 
+
 /* ==================================================
    2. HEADER DAN NAVIGASI
    ================================================== */
@@ -76,20 +77,23 @@ img {
 }
 
 .nav {
-    width: 90%;
+    width: 100%;
     max-width: 1000px;
     margin: 0 auto;
 
-    /* FLEXBOX */
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: var(--space-3);
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 .brand {
     display: inline-block;
+    flex-shrink: 0;
     margin-bottom: 0;
+
     color: var(--color-primary-strong);
     font-size: 20px;
     font-weight: bold;
@@ -98,8 +102,11 @@ img {
 
 .nav ul {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    gap: var(--space-2);
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px 14px;
 
     margin: 0;
     padding: 0;
@@ -111,8 +118,10 @@ img {
 }
 
 .nav a {
+    display: inline-block;
+    padding-block: 0.25rem;
     color: var(--color-muted);
-    font-size: 15px;
+    font-size: 14px;
     text-decoration: none;
 }
 
@@ -177,7 +186,7 @@ audio:focus-visible {
 
 .section-heading h1 {
     margin-bottom: 15px;
-    font-size: 42px;
+    font-size: clamp(1.75rem, 1.3rem + 2.2vw, 2.625rem);
     line-height: 1.2;
 }
 
@@ -227,7 +236,7 @@ button:hover {
 
     /* GRID */
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: minmax(0, 1fr);
     align-items: center;
     gap: var(--space-4);
 
@@ -241,7 +250,8 @@ button:hover {
 
 .hero h1 {
     margin-bottom: 18px;
-    font-size: 58px;
+    /* FLUIDA: 2rem (320px) -> 3.625rem (lebar besar) */
+    font-size: clamp(2rem, 1.2rem + 4vw, 3.625rem);
     line-height: 1.1;
 }
 
@@ -278,7 +288,14 @@ button:hover {
 }
 
 .products {
-    display: block;
+    /* FLUIDA: kolom otomatis, kartu min. 16rem, tidak pernah melebihi lebar wadah */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    gap: var(--space-4);
+}
+
+.products .product-card {
+    margin-bottom: 0;
 }
 
 .product-card {
@@ -479,7 +496,7 @@ button:hover {
 
 .product-intro h1 {
     margin-bottom: 15px;
-    font-size: 42px;
+    font-size: clamp(1.75rem, 1.3rem + 2.2vw, 2.625rem);
     line-height: 1.2;
 }
 
@@ -536,7 +553,7 @@ button:hover {
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     align-items: stretch;
     gap: var(--space-4);
 }
@@ -719,6 +736,23 @@ tbody tr:hover th {
 }
 
 
+/* WRAPPER TABEL RESPONSIVE */
+.table-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.table-scroll:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
+}
+
+.table-scroll table {
+    /* berbasis konten: kolom "Coconut Choco Bites" + ukuran + harga */
+    min-width: 28rem;
+}
+
+
 /* ==================================================
    13. HALAMAN GALERI
    ================================================== */
@@ -729,7 +763,7 @@ tbody tr:hover th {
 
 .gallery-intro h1 {
     margin-bottom: 15px;
-    font-size: 42px;
+    font-size: clamp(1.75rem, 1.3rem + 2.2vw, 2.625rem);
     line-height: 1.2;
 }
 
@@ -741,9 +775,9 @@ tbody tr:hover th {
 /* GRID GALERI */
 
 .gallery-grid {
-    /* GRID */
+    /* GRID: baseline mobile-first, satu kolom */
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     gap: var(--space-3);
 }
 
@@ -752,7 +786,7 @@ tbody tr:hover th {
 
 .gallery-process {
     margin-bottom: 30px;
-    padding: 30px;
+    padding: clamp(1.25rem, 0.5rem + 3.5vw, 1.875rem);
 
     background-color: var(--color-surface);
     border-radius: var(--radius-md);
@@ -768,19 +802,26 @@ tbody tr:hover th {
 /* GAMBAR GALERI */
 
 .gallery-process figure {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 .gallery-process img {
     display: block;
-
     width: 100%;
     max-width: 800px;
-
+    height: auto;
     margin: 0 auto;
-
     border-radius: var(--radius-sm);
+}
+
+.gallery-process figcaption {
+    flex: 1;
+    padding: var(--space-3);
 }
 
 figcaption {
@@ -821,7 +862,7 @@ audio {
 
 .contact-layout {
     display: grid;
-    grid-template-columns: 0.85fr 1.15fr;
+    grid-template-columns: 1fr;
     align-items: start;
     gap: var(--space-4);
     margin-top: var(--space-5);
@@ -839,7 +880,7 @@ audio {
 
 .contact-layout .about-section h1 {
     margin-bottom: var(--space-3);
-    font-size: 38px;
+    font-size: clamp(1.75rem, 1.2rem + 2.4vw, 2.375rem);
     line-height: 1.2;
 }
 
@@ -866,7 +907,7 @@ audio {
     max-width: none;
 
     margin: 0;
-    padding: 35px;
+    padding: clamp(1.25rem, 0.6rem + 3.5vw, 2.1875rem);
 
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
@@ -987,7 +1028,7 @@ audio {
     max-width: 750px;
 
     margin: 0 auto 60px;
-    padding: 35px;
+    padding: clamp(1.25rem, 0.6rem + 3.5vw, 2.1875rem);
 
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
@@ -1008,6 +1049,7 @@ audio {
     padding: 18px;
 
     white-space: pre-wrap;
+    overflow-wrap: anywhere;
 
     color: var(--color-text);
     background-color: #f4f7ef;
@@ -1076,38 +1118,68 @@ audio {
 }
 
 
+
 /* ==================================================
-   18. RESPONSIVE - TABLET
+   18. RESPONSIVE MOBILE-FIRST
    ================================================== */
 
-@media (max-width: 800px) {
+/* Layar menengah: navigasi horizontal dan galeri 2 kolom */
+@media (min-width: 42rem) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 
     .hero {
-        text-align: center;
+        text-align: left;
     }
 
     .hero-content {
-        width: 100%;
+        width: auto;
     }
 
     .hero-description {
-        margin-right: auto;
-        margin-left: auto;
+        margin-right: 0;
+        margin-left: 0;
     }
 
     .promo-section {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
+        text-align: left;
     }
 }
 
+/* Layar lebih lebar: hero dua kolom dan produk dua kolom */
+@media (min-width: 48rem) {
+    .hero {
+        grid-template-columns: 1.2fr 0.8fr;
+    }
 
-/* ==================================================
-   19. RESPONSIVE - HP
-   ================================================== */
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
 
-@media (max-width: 500px) {
+/* Desktop: produk tiga kolom dan kontak dua kolom */
+@media (min-width: 60rem) {
+    .nav {
+        flex-wrap: nowrap;
+    }
 
+    .nav ul {
+        flex-wrap: nowrap;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .contact-layout {
+        grid-template-columns: 0.85fr 1.15fr;
+    }
+}
+
+/* Penyesuaian tipografi dan ruang pada layar sempit */
+@media (max-width: 31.25rem) {
     .page,
     .nav {
         width: 92%;
@@ -1115,12 +1187,12 @@ audio {
 
     .nav {
         align-items: flex-start;
-        flex-direction: column;
     }
 
-    .nav li {
-        margin-right: 0;
-        margin-bottom: 5px;
+    .nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-2);
     }
 
     .nav a {
@@ -1128,21 +1200,11 @@ audio {
     }
 
     .hero {
-        padding: 45px 0;
-    }
-
-    .hero h1 {
-        font-size: 45px;
+        padding: 45px 20px;
     }
 
     .hero-text {
         font-size: 20px;
-    }
-
-    .section-heading h1,
-    .product-intro h1,
-    .gallery-intro h1 {
-        font-size: 32px;
     }
 
     .section-heading h2 {
@@ -1167,5 +1229,22 @@ audio {
     td {
         padding: 9px 10px;
         font-size: 14px;
+    }
+}
+
+/* ==================================================
+   19. PREFERENSI GERAK
+   ================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+
+    .product-card:hover,
+    .product-grid .product-card:hover {
+        transform: none;
     }
 }
