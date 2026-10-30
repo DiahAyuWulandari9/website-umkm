@@ -1232,6 +1232,57 @@ audio {
     }
 }
 
+
+/* Tombol hamburger */
+.nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 0.9rem;
+    border: 1px solid var(--color-focus);
+    border-radius: 0.5rem;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+
+/* Fokus untuk pengguna keyboard */
+.nav-toggle:focus-visible,
+.nav a:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
+}
+
+/* Menu disembunyikan dulu di layar kecil */
+.nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Menu terlihat setelah tombol diklik */
+.nav ul.is-open {
+    display: flex;
+}
+
+/* Tampilan desktop */
+@media (min-width: 60rem) {
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav ul,
+    .nav ul.is-open {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+    }
+}
+
 /* ==================================================
    19. PREFERENSI GERAK
    ================================================== */
@@ -1246,5 +1297,190 @@ audio {
     .product-card:hover,
     .product-grid .product-card:hover {
         transform: none;
+    }
+}
+
+
+/* ==================================================
+   P09 - KARTU PRODUK DARI JAVASCRIPT
+   ================================================== */
+
+/* GRID PRODUK */
+.js-product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 28px 24px;
+    align-items: stretch;
+    overflow: visible;
+    padding-top: 12px;
+}
+
+/* KARTU PRODUK */
+.js-product-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+
+    min-width: 0;
+    min-height: 310px;
+    padding: 38px 20px 20px;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+
+    box-shadow: 0 8px 22px rgba(40, 30, 20, 0.06);
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* EFEK HOVER */
+.js-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 26px rgba(40, 30, 20, 0.11);
+}
+
+/* RESET JARAK TULISAN */
+.js-product-card h3,
+.js-product-card p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* NAMA PRODUK */
+.js-product-card h3 {
+    color: var(--color-text);
+    font-size: 1.1rem;
+    line-height: 1.4;
+    min-height: 0;
+}
+
+/* KATEGORI */
+.js-product-card .product-category {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+}
+
+/* HARGA */
+.js-product-card .price {
+    margin-top: auto;
+    padding-top: 16px;
+
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--color-text);
+}
+
+/* LABEL BEST SELLER - MENEMPEL DI LUAR KARTU */
+.js-product-card .best-seller-badge {
+    position: absolute;
+    top: -13px;
+    left: 16px;
+    z-index: 5;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    padding: 7px 13px;
+
+    border-radius: 7px 7px 7px 0;
+    color: #ffffff;
+    background: #80533d;
+    border: 1px solid #80533d;
+
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+
+    box-shadow: 0 3px 8px rgba(40, 30, 20, 0.12);
+}
+
+/* BADGE STATUS STOK */
+.js-product-card .stock-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    padding: 7px 12px;
+
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.js-product-card .stock-badge.available {
+    color: #166534;
+    background: #dcfce7;
+    border: 1px solid #bbf7d0;
+}
+
+.js-product-card .stock-badge.warning {
+    color: #92400e;
+    background: #fef3c7;
+    border: 1px solid #fde68a;
+}
+
+.js-product-card .stock-badge.empty {
+    color: #991b1b;
+    background: #fee2e2;
+    border: 1px solid #fecaca;
+}
+
+/* TOMBOL PEMESANAN */
+.js-product-card .product-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-height: 43px;
+    margin-top: 5px;
+    padding: 10px;
+
+    border-radius: 999px;
+    background: #80533d;
+    color: #ffffff;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.js-product-card .product-action:hover {
+    background: #593b2b;
+    transform: translateY(-2px);
+}
+
+/* TOMBOL SAAT STOK HABIS */
+.js-product-card .product-action.is-disabled {
+    background: #fce8e6;
+    color: #991b1b;
+    cursor: not-allowed;
+}
+
+/* TABLET */
+@media (max-width: 950px) {
+    .js-product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* HP */
+@media (max-width: 36rem) {
+    .js-product-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .js-product-card {
+        min-height: 290px;
     }
 }

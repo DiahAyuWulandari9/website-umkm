@@ -9,6 +9,8 @@
 
     <link rel="stylesheet" href="css/style.css">
     <script src="js/form.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/app.js" defer></script>
 </head>
 
 <body>
@@ -18,26 +20,19 @@
 
     <!-- HEADER -->
     <header class="site-header">
-
-        <nav class="nav" aria-label="Navigasi Utama">
+        <nav class="nav" aria-label="Navigasi utama">
             <a class="brand" href="index.html">NOURA Bites</a>
-            <ul>
-                <li>
-                    <a href="index.html">Beranda</a>
-                </li>
 
-                <li>
-                    <a href="tentang.html">Tentang Kami</a>
-                </li>
-                <li>
-                    <a href="produk.html">Produk</a>
-                </li>
-                <li>
-                    <a href="galeri.html">Galeri</a>
-                </li>
-                <li>
-                    <a href="kontak.html" aria-current="page">Kontak</a>
-                </li>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Buka menu navigasi">
+                <span aria-hidden="true">☰</span>
+                <span>Menu</span>
+            </button>
+            <ul id="nav-menu">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="tentang.html">Tentang Kami</a></li>
+                <li><a href="produk.html">Produk</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="kontak.html" aria-current="page">Kontak</a></li>
             </ul>
         </nav>
     </header>

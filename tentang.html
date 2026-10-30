@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tentang Kami - NOURA Bites</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <script src="js/app.js" defer></script>
 </head>
 
 <body>
@@ -15,9 +17,14 @@
 
     <!-- HEADER -->
     <header class="site-header">
-        <nav class="nav" aria-label="Navigasi Utama">
+        <nav class="nav" aria-label="Navigasi utama">
             <a class="brand" href="index.html">NOURA Bites</a>
-            <ul>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Buka menu navigasi">
+                <span aria-hidden="true">☰</span>
+                <span>Menu</span>
+            </button>
+            <ul id="nav-menu">
                 <li><a href="index.html">Beranda</a></li>
                 <li><a href="tentang.html" aria-current="page">Tentang Kami</a></li>
                 <li><a href="produk.html">Produk</a></li>

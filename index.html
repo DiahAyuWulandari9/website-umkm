@@ -8,6 +8,8 @@
     <title>NOURA Bites - Smart Snack</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <script src="js/app.js" defer></script>
 </head>
 
 <body>
@@ -15,28 +17,21 @@
     <a class="skip-link" href="#konten">Lewati ke konten utama</a>
 
     <!-- HEADER -->
-    <header class="site-header">
-        <nav class="nav" aria-label="Navigasi Utama">
+    <header class="site-header">  
+        <nav class="nav" aria-label="Navigasi utama">
             <a class="brand" href="index.html">NOURA Bites</a>
 
-            <ul>
-                <li>
-                    <a href="index.html" aria-current="page">Beranda</a>
-                </li>
-                <li>
-                    <a href="tentang.html">Tentang Kami</a>
-                </li>
-                <li>
-                    <a href="produk.html">Produk</a>
-                </li>
-                <li>
-                    <a href="galeri.html">Galeri</a>
-                </li>
-                <li>
-                    <a href="kontak.html">Kontak</a>
-                </li>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Buka menu navigasi">
+                <span aria-hidden="true">☰</span>
+                <span>Menu</span>
+            </button>
+            <ul id="nav-menu">
+                <li><a href="index.html" aria-current="page">Beranda</a></li>
+                <li><a href="tentang.html">Tentang Kami</a></li>
+                <li><a href="produk.html">Produk</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
             </ul>
-
         </nav>
     </header>
 
@@ -105,13 +100,35 @@
                 <!-- PRODUK 3 -->
                 <article class="product-card featured">
 
-                    <div class="product-icon" aria-hidden="true">🍫</div>
+                    <div class="product-icon" aria-hidden="true">📌</div>
                     <div class="product-info">
                         <span class="product-seller">BEST SELLER</span>
                         <h3> Smart Snack Mix </h3>
                         <p>Kombinasi cokelat, almond, dan coconut dalam satu kemasan untuk menikmati tiga
                            rasa favorit sekaligus.</p>
                         <strong> Rp20.000 </strong>
+                    </div>
+                </article>
+
+                <!-- PRODUK 4 -->
+                <article class="product-card">
+
+                    <div class="product-icon" aria-hidden="true">🍪</div>
+                    <div class="product-info">
+                        <h3>Almond Crunch</h3>
+                        <p>Cokelat dengan almond yang renyah dan gurih.</p>
+                        <strong> Rp17.000 </strong>
+                    </div>
+                </article>
+
+                <!-- PRODUK 5 -->
+                <article class="product-card">
+
+                    <div class="product-icon" aria-hidden="true">🥜</div>
+                    <div class="product-info">
+                        <h3>Coconut Choco Bites</h3>
+                        <p>Cokelat dengan sentuhan kelapa yang memberikan perpaduan rasa manis, gurih, dan aroma yang khas.</p>
+                        <strong> Rp17.000 </strong>
                     </div>
                 </article>
             </div>
@@ -153,9 +170,6 @@
     <footer class="site-footer">
         <p>© 2026 NOURA Bites. Smart Snack for Smart Days.</p>
     </footer>
-
-    <!-- JAVASCRIPT -->
-    <script src="js/script.js"></script>
-
+    
 </body>
 </html>
