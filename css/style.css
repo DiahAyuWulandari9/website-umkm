@@ -1475,3 +1475,64 @@ audio {
         transform: none;
     }
 }
+
+/* P11 - CSS STATE VISUAL FILTER PRODUK */
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-block: 1rem 1.5rem;
+}
+
+.filter-button {
+  border: 1px solid #d8c5b5;
+  border-radius: 999px;
+  background: #fff0df;
+  color: #8b451f;
+  padding: 0.65rem 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.filter-button:hover,
+.filter-button:focus-visible {
+  border-color: #8b451f;
+  outline: 2px solid rgb(139 69 31 / 20%);
+  outline-offset: 2px;
+  background-color: #f3dfca;
+}
+
+.filter-button.is-active {
+  background: #8b451f;
+  border-color: #8b451f;
+  color: #ffffff;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  border: 1px dashed #d8c5b5;
+  border-radius: 1rem;
+  padding: 1rem;
+  background: #f8f6ef;
+  color: #795b46;
+}
+
+/* Tombol Sembunyikan pada kartu (latihan remove) */
+.js-product-card .ghost-button {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px dashed #d8c5b5;
+  border-radius: 999px;
+  background: transparent;
+  color: #795b46;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.js-product-card .ghost-button:hover,
+.js-product-card .ghost-button:focus-visible {
+  border-color: #8b451f;
+  color: #8b451f;
+  background: #fff0df;
+}

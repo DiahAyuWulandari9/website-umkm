@@ -44,22 +44,24 @@
         <section class="category-section" aria-labelledby="kategori-title">
             <p class="eyebrow">KATEGORI</p>
             <h2 id="kategori-title">Kategori Produk</h2>
-            <ul>
-                <li>Cokelat</li>
-                <li>Almond</li>
-                <li>Coconut</li>
-                <li>Mix</li>
-            </ul>
+            <div class="filter-bar" aria-label="Filter kategori produk">
+                <button type="button" class="filter-button is-active" data-filter="Semua" aria-pressed="true">Semua</button>
+                <button type="button" class="filter-button" data-filter="Choco" aria-pressed="false">Cokelat</button>
+                <button type="button" class="filter-button" data-filter="Almond" aria-pressed="false">Almond</button>
+                <button type="button" class="filter-button" data-filter="Coconut" aria-pressed="false">Coconut</button>
+                <button type="button" class="filter-button" data-filter="Mix" aria-pressed="false">Mix</button>
+                <button type="button" class="filter-button" data-filter="Matcha" aria-pressed="false">Matcha</button>
+            </div>
         </section>
 
         <!-- PRODUK DINAMIS -->
         <section class="featured-products" aria-labelledby="produk-dinamis-title">
             <p class="eyebrow">PRODUK PILIHAN</p>
-            <h2 id="produk-dinamis-title">Pilihan Produk NOURA Bites</h2>
+            <h2 id="produk-dinamis-title">Produk Kami</h2>
             
-            <p id="produk-ringkasan" aria-live="polite"> Data produk sedang disiapkan... </p>
-            <p id="produk-unggulan" aria-live="polite"> Produk unggulan akan ditentukan melalui JavaScript</p>
-            <div id="produk-dinamis" class="js-product-grid"></div>
+            <p id="produk-status" aria-live="polite">Produk belum dimuat</p>
+            <p id="produk-unggulan" aria-live="polite">Produk unggulan akan ditentukan melalui JavaScript</p>
+            <div id="produk-grid" class="js-product-grid"></div>
         </section>
 
         <!-- KATALOG PRODUK -->
