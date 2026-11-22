@@ -858,8 +858,11 @@ audio {
    14. HALAMAN KONTAK - LAYOUT P06
    ================================================== */
 
-/* GRID UTAMA HALAMAN KONTAK */
+/* ==================================================
+   14. HALAMAN KONTAK & FORMULIR
+   ================================================== */
 
+/* GRID UTAMA HALAMAN KONTAK */
 .contact-layout {
     display: grid;
     grid-template-columns: 1fr;
@@ -868,10 +871,9 @@ audio {
     margin-top: var(--space-5);
 }
 
-/* INFORMASI KONTAK */
-
+/* INFORMASI KONTAK (KOLOM KIRI) */
 .contact-layout .about-section {
-    padding: var(--space-4);
+    padding: clamp(1.5rem, 2vw, 2rem);
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
@@ -880,39 +882,28 @@ audio {
 
 .contact-layout .about-section h1 {
     margin-bottom: var(--space-3);
-    font-size: clamp(1.75rem, 1.2rem + 2.4vw, 2.375rem);
-    line-height: 1.2;
+    font-size: clamp(1.6rem, 1.2rem + 1.8vw, 2.1rem);
+    line-height: 1.25;
+    color: var(--color-primary-strong);
 }
 
 .contact-layout .about-section p {
     margin-bottom: 0;
     color: var(--color-muted);
+    font-size: 15px;
+    line-height: 1.6;
 }
-
-
-/* KELOMPOK PILIHAN FORM */
-
-/* FLEXBOX */
-.choice-group {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-}
-
 
 /* FORM KONTAK */
-
 #form-kontak {
     width: 100%;
     max-width: none;
-
     margin: 0;
-    padding: clamp(1.25rem, 0.6rem + 3.5vw, 2.1875rem);
-
+    padding: clamp(1.5rem, 2.5vw, 2.25rem);
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
-    box-shadow: 0 8px 25px rgba(60, 50, 40, 0.08);
+    box-shadow: var(--shadow-card);
 }
 
 .field {
@@ -921,103 +912,116 @@ audio {
 
 .field label {
     display: block;
-
-    margin-bottom: 7px;
-
+    margin-bottom: 8px;
     color: var(--color-text);
+    font-size: 14.5px;
     font-weight: 600;
 }
 
-
-/* INPUT, SELECT, TEXTAREA */
-
-#form-kontak .field input,
+/* INPUT, SELECT, TEXTAREA (exclude checkbox) */
+#form-kontak .field input:not([type="checkbox"]),
 #form-kontak select,
 #form-kontak textarea {
     width: 100%;
-
     padding: 12px 14px;
-
     color: var(--color-text);
     background-color: var(--color-surface-soft);
-
     border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);
-
-    font-family: Arial, sans-serif;
+    font-family: inherit;
     font-size: 15px;
+    line-height: 1.5;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
-#form-kontak .field input:focus,
+#form-kontak .field input:not([type="checkbox"]):focus,
 #form-kontak select:focus,
 #form-kontak textarea:focus {
     border-color: var(--color-primary);
-    outline: 3px solid var(--color-focus);
+    background-color: #ffffff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(95, 128, 100, 0.22);
 }
 
-
-/* FIELDSET */
-
+/* KELOMPOK PILIHAN RADIO (FIELDSET) */
 #form-kontak fieldset {
     margin: 0 0 22px;
-    padding: 18px 20px;
-
+    padding: 16px 18px 18px;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);
-
-    background-color: #fbfcf8;
+    background-color: #fafbf7;
 }
 
 #form-kontak legend {
     padding: 0 8px;
-
-    color: var(--color-primary);
+    color: var(--color-primary-strong);
+    font-size: 14px;
     font-weight: bold;
 }
 
-
-/* RADIO BUTTON */
+.choice-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 6px;
+}
 
 #form-kontak fieldset label {
     display: flex;
     align-items: center;
-
-    margin: 10px 0;
-
+    gap: 10px;
+    margin: 0;
+    padding: 9px 12px;
     color: var(--color-text);
+    font-size: 14px;
     font-weight: normal;
-
+    background-color: #ffffff;
+    border: 1px solid #eee4da;
+    border-radius: var(--radius-sm);
     cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+#form-kontak fieldset label:hover {
+    background-color: #f3f7ee;
+    border-color: var(--color-primary);
+}
+
+#form-kontak fieldset label:has(input[type="radio"]:checked) {
+    background-color: #f1f6ec;
+    border-color: var(--color-primary);
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(95, 128, 100, 0.1);
 }
 
 #form-kontak fieldset input[type="radio"] {
-    width: auto;
-
-    margin: 0 8px 0 0;
-    padding: 0;
-
-    border: none;
-    background: transparent;
-    border-radius: 0;
-
-    appearance: auto;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    accent-color: var(--color-primary);
+    flex-shrink: 0;
+    cursor: pointer;
 }
 
+/* Susunan radio tombol responsif multi-kolom di tablet dan desktop */
+@media (min-width: 36rem) {
+    #form-kontak .choice-group {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+    }
+}
 
 /* TEXTAREA */
-
 #form-kontak textarea {
-    min-height: 130px;
+    min-height: 120px;
     resize: vertical;
 }
 
-
-/* BUTTON FORM */
-
+/* BUTTON UMUM DI DALAM FORM (Direset agar tidak mengganggu kontrol preferensi) */
 #form-kontak button {
-    margin-top: 5px;
+    margin-top: 0;
 }
-
 
 /* ==================================================
    15. PREVIEW FORM
@@ -1025,37 +1029,36 @@ audio {
 
 .preview-section {
     width: 100%;
-    max-width: 750px;
-
-    margin: 0 auto 60px;
+    max-width: 1000px;
+    margin: 36px auto 60px;
     padding: clamp(1.25rem, 0.6rem + 3.5vw, 2.1875rem);
-
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
-    box-shadow: 0 8px 25px rgba(60, 50, 40, 0.08);
+    box-shadow: var(--shadow-card);
 }
 
 .preview-section h2 {
-    margin: 0 0 15px;
-
-    color: var(--color-text);
-    font-size: 25px;
+    margin: 0 0 14px;
+    color: var(--color-primary-strong);
+    font-size: 20px;
+    font-weight: bold;
 }
 
 #preview-form {
-    min-height: 60px;
+    min-height: 70px;
     margin: 0;
-    padding: 18px;
-
+    padding: 18px 20px;
     white-space: pre-wrap;
     overflow-wrap: anywhere;
-
+    font-family: inherit;
+    font-size: 14.5px;
+    line-height: 1.6;
     color: var(--color-text);
-    background-color: #f4f7ef;
-
+    background-color: #f7f9f4;
     border: 1px solid #dce5d5;
     border-radius: var(--radius-sm);
+    transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 
@@ -1174,7 +1177,13 @@ audio {
     }
 
     .contact-layout {
-        grid-template-columns: 0.85fr 1.15fr;
+        grid-template-columns: 0.78fr 1.22fr;
+        gap: var(--space-5);
+    }
+
+    .contact-layout .about-section {
+        position: sticky;
+        top: 24px;
     }
 }
 
@@ -1535,4 +1544,351 @@ audio {
   border-color: #8b451f;
   color: #8b451f;
   background: #fff0df;
+}
+
+/* ==================================================
+   19. P12 - VALIDASI AKSESIBEL & PREFERENSI FORM
+   ================================================== */
+
+/* Teks Petunjuk Form (Hint) */
+.field-hint {
+    display: block;
+    margin-top: 4px;
+    font-size: 13px;
+    color: var(--color-muted);
+}
+
+/* Pesan Error Aksesibel per Field */
+.field-error {
+    display: none;
+    margin-top: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-danger);
+    line-height: 1.4;
+}
+
+.field-error:not(:empty) {
+    display: block;
+}
+
+/* Indikator visual error non-warna (ikon peringatan) untuk aksesibilitas */
+.field-error:not(:empty)::before {
+    content: "⚠ ";
+    font-weight: bold;
+    margin-right: 2px;
+}
+
+/* Tampilan Field Input Saat Invalid (aria-invalid="true") — exclude checkbox */
+#form-kontak .field input:not([type="checkbox"])[aria-invalid="true"],
+#form-kontak select[aria-invalid="true"],
+#form-kontak textarea[aria-invalid="true"] {
+    border-color: var(--color-danger);
+    background-color: var(--color-danger-soft);
+    box-shadow: 0 0 0 1px var(--color-danger);
+}
+
+#form-kontak .field input:not([type="checkbox"])[aria-invalid="true"]:focus,
+#form-kontak select[aria-invalid="true"]:focus,
+#form-kontak textarea[aria-invalid="true"]:focus {
+    border-color: var(--color-danger);
+    outline: 3px solid var(--color-danger);
+    outline-offset: 1px;
+}
+
+/* Tampilan Kelompok Fieldset Radio Saat Invalid */
+#form-kontak fieldset[aria-invalid="true"] {
+    border-color: var(--color-danger);
+    background-color: #fffaf9;
+    box-shadow: 0 0 0 1px var(--color-danger);
+}
+
+/* Panel Preferensi Pengunjung */
+.preference-panel {
+    margin: 24px 0 20px;
+    padding: 16px 18px;
+    background-color: #fbfbf7;
+    border: 1px dashed var(--color-primary);
+    border-radius: var(--radius-sm);
+}
+
+.preference-title {
+    margin: 0 0 6px;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--color-primary-strong);
+}
+
+.preference-desc {
+    margin: 0 0 12px;
+    font-size: 13px;
+    color: var(--color-muted);
+    line-height: 1.5;
+}
+
+.preference-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Tombol Simpan Preferensi */
+#form-kontak .btn-pref-save {
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-primary-strong);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#form-kontak .btn-pref-save:hover {
+    background-color: var(--color-primary-strong);
+}
+
+/* Tombol Hapus Preferensi */
+#form-kontak .btn-pref-clear {
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-muted);
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+#form-kontak .btn-pref-clear:hover {
+    color: var(--color-danger);
+    border-color: var(--color-danger);
+    background-color: var(--color-danger-soft);
+}
+
+/* Status Preferensi */
+.preference-status {
+    display: none;
+    margin-top: 12px;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    line-height: 1.4;
+}
+
+.preference-status:not(:empty) {
+    display: block;
+}
+
+.preference-status.is-success {
+    color: var(--color-success);
+    background-color: var(--color-success-soft);
+    border: 1px solid var(--color-success);
+}
+
+.preference-status.is-info {
+    color: #1e40af;
+    background-color: #eff6ff;
+    border: 1px solid #93c5fd;
+}
+
+.preference-status.is-warning {
+    color: #92400e;
+    background-color: #fef3c7;
+    border: 1px solid #f59e0b;
+}
+
+/* Field Checkbox Persetujuan (setuju) */
+.field-checkbox {
+    padding: 14px 16px;
+    background-color: #fdfdf9;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+}
+
+/* Override: .field label { display: block } tidak berlaku untuk checkbox-label */
+.field-checkbox .checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-text);
+    cursor: pointer;
+    line-height: 1.5;
+}
+
+/* Override: #form-kontak .field input tidak berlaku untuk input[type=checkbox] */
+.field-checkbox .checkbox-label input[type="checkbox"] {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    padding: 0;
+    margin-top: 3px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    accent-color: var(--color-primary);
+    cursor: pointer;
+    transition: none;
+}
+
+.field-checkbox .checkbox-label input[type="checkbox"]:focus {
+    outline: 3px solid rgba(95, 128, 100, 0.5);
+    outline-offset: 2px;
+    border: none;
+    box-shadow: none;
+}
+
+.field-checkbox .checkbox-label input[type="checkbox"][aria-invalid="true"] {
+    outline: 3px solid var(--color-danger);
+    outline-offset: 2px;
+}
+
+/* Tombol Submit Form Kontak */
+#form-kontak .submit-button {
+    width: 100%;
+    margin-top: 12px;
+    padding: 13px 22px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#form-kontak .submit-button:hover {
+    background-color: var(--color-primary-strong);
+}
+
+#form-kontak .submit-button:active {
+    transform: scale(0.99);
+}
+
+/* Responsivitas Layar Kecil untuk Kontrol Preferensi */
+@media (max-width: 30rem) {
+    .preference-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #form-kontak .btn-pref-save,
+    #form-kontak .btn-pref-clear {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Newsletter ringan (P12) */
+.newsletter-section {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 60px;
+    padding: clamp(1.25rem, 0.6rem + 3.5vw, 2.1875rem);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+}
+
+.newsletter-section h2 {
+    margin: 0 0 14px;
+    color: var(--color-primary-strong);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#form-newsletter fieldset {
+    margin: 0 0 18px;
+    padding: 16px 18px 18px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background-color: #fafbf7;
+}
+
+#form-newsletter legend {
+    padding: 0 8px;
+    color: var(--color-primary-strong);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#form-newsletter fieldset label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 9px 12px;
+    color: var(--color-text);
+    font-size: 14px;
+    background-color: #ffffff;
+    border: 1px solid #eee4da;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+}
+
+#form-newsletter fieldset label:hover {
+    background-color: #f3f7ee;
+    border-color: var(--color-primary);
+}
+
+#form-newsletter fieldset label:has(input:checked) {
+    background-color: #f1f6ec;
+    border-color: var(--color-primary);
+    font-weight: 600;
+}
+
+#form-newsletter input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    accent-color: var(--color-primary);
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+#form-newsletter .btn-pref-save,
+#form-newsletter .btn-pref-clear {
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+}
+
+#form-newsletter .btn-pref-save {
+    color: #ffffff;
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-primary-strong);
+}
+
+#form-newsletter .btn-pref-clear {
+    color: var(--color-muted);
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+}
+
+@media (min-width: 36rem) {
+    #form-newsletter .choice-group {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+    }
+}
+
+@media (max-width: 30rem) {
+    #form-newsletter .preference-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
 }
