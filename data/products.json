@@ -1,0 +1,47 @@
+[
+  {
+    "id": "chocolate-almond",
+    "name": "Chocolate Almond",
+    "category": "Almond",
+    "price": 15000,
+    "stock": 12,
+    "featured": true,
+    "description": "Perpaduan cokelat dan almond dalam camilan lezat untuk menemani waktu santai"
+  },
+  {
+    "id": "coconut-choco",
+    "name": "Coconut Choco",
+    "category": "Coconut",
+    "price": 15000,
+    "stock": 8,
+    "featured": false,
+    "description": "Camilan dengan perpaduan cita rasa kelapa dan cokelat yang cocok dinikmati kapan saja"
+  },
+  {
+    "id": "smart-snack-mix",
+    "name": "Smart Snack Mix",
+    "category": "Mix",
+    "price": 20000,
+    "stock": 10,
+    "featured": true,
+    "description": "Pilihan camilan mix untuk menemani aktivitas dan menghadirkan variasi dalam setiap gigitan"
+  },
+  {
+    "id": "almond-crunch",
+    "name": "Almond Crunch",
+    "category": "Almond",
+    "price": 17000,
+    "stock": 5,
+    "featured": false,
+    "description": "Camilan almond dengan karakter crunchy yang memberikan sensasi renyah saat dinikmati"
+  },
+  {
+    "id": "coconut-choco-bites",
+    "name": "Coconut Choco Bites",
+    "category": "Choco",
+    "price": 17000,
+    "stock": 0,
+    "featured": false,
+    "description": "Camilan bite-size dengan perpaduan kelapa dan cokelat yang praktis untuk dinikmati"
+  }
+]

@@ -100,14 +100,15 @@ img {
     text-decoration: none;
 }
 
+/* Menu disembunyikan dulu di layar kecil, tampil setelah tombol diklik (.is-open) */
 .nav ul {
-    display: flex;
-    flex-direction: row;
+    display: none;
+    flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-end;
     gap: 8px 14px;
-
+    width: 100%;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -1168,10 +1169,6 @@ audio {
         flex-wrap: nowrap;
     }
 
-    .nav ul {
-        flex-wrap: nowrap;
-    }
-
     .product-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
@@ -1263,16 +1260,6 @@ audio {
     outline-offset: 3px;
 }
 
-/* Menu disembunyikan dulu di layar kecil */
-.nav ul {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
 /* Menu terlihat setelah tombol diklik */
 .nav ul.is-open {
     display: flex;
@@ -1288,6 +1275,7 @@ audio {
     .nav ul.is-open {
         display: flex;
         flex-direction: row;
+        flex-wrap: nowrap;
         width: auto;
     }
 }
@@ -1418,36 +1406,6 @@ audio {
     border-color: #fecaca;
 }
 
-.js-product-card .product-action {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    min-height: 43px;
-    margin-top: 5px;
-    padding: 10px;
-    color: #fff;
-    background: #80533d;
-    border-radius: 999px;
-    font-size: 0.9rem;
-    font-weight: 700;
-    text-align: center;
-    text-decoration: none;
-    transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.js-product-card .product-action:hover {
-    background: #593b2b;
-    transform: translateY(-2px);
-}
-
-.js-product-card .product-action.is-disabled {
-    background: #fce8e6;
-    color: #991b1b;
-    cursor: not-allowed;
-    pointer-events: none;
-}
-
 /* Penegasan informasi produk unggulan */
 #produk-unggulan {
     font-weight: 700;
@@ -1474,13 +1432,11 @@ audio {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .js-product-card,
-    .js-product-card .product-action {
+    .js-product-card {
         transition: none;
     }
 
-    .js-product-card:hover,
-    .js-product-card .product-action:hover {
+    .js-product-card:hover {
         transform: none;
     }
 }
@@ -1525,25 +1481,6 @@ audio {
   padding: 1rem;
   background: #f8f6ef;
   color: #795b46;
-}
-
-/* Tombol Sembunyikan pada kartu (latihan remove) */
-.js-product-card .ghost-button {
-  width: 100%;
-  padding: 0.5rem 0.75rem;
-  border: 1px dashed #d8c5b5;
-  border-radius: 999px;
-  background: transparent;
-  color: #795b46;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.js-product-card .ghost-button:hover,
-.js-product-card .ghost-button:focus-visible {
-  border-color: #8b451f;
-  color: #8b451f;
-  background: #fff0df;
 }
 
 /* ==================================================
@@ -1891,4 +1828,35 @@ audio {
         flex-direction: column;
         align-items: stretch;
     }
+}
+
+/* ==================================================
+   P13 - STATUS KATALOG (loading / success / error)
+   ================================================== */
+.catalog-status {
+    display: inline-block;
+    margin: 0.25rem 0;
+    padding: 0.4rem 0.85rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.catalog-status.loading {
+    color: #92400e;
+    background: #fef3c7;
+    border-color: #fde68a;
+}
+
+.catalog-status.success {
+    color: var(--color-success);
+    background: var(--color-success-soft);
+    border-color: #bbf7d0;
+}
+
+.catalog-status.error {
+    color: var(--color-danger);
+    background: var(--color-danger-soft);
+    border-color: #fecaca;
 }

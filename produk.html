@@ -6,7 +6,7 @@
     <title>Produk - NOURA Bites</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" defer></script>
-    <script src="js/app.js" defer></script>
+    <script type="module" src="js/catalog-api.js"></script>
 </head>
 <body>
     <!-- SKIP LINK -->
@@ -58,10 +58,10 @@
         <section class="featured-products" aria-labelledby="produk-dinamis-title">
             <p class="eyebrow">PRODUK PILIHAN</p>
             <h2 id="produk-dinamis-title">Produk Kami</h2>
-            
-            <p id="produk-status" aria-live="polite">Produk belum dimuat</p>
-            <p id="produk-unggulan" aria-live="polite">Produk unggulan akan ditentukan melalui JavaScript</p>
-            <div id="produk-grid" class="js-product-grid"></div>
+            <p id="catalog-status" class="catalog-status" aria-live="polite">Produk belum dimuat</p>
+            <p id="produk-ringkasan">Menunggu data produk</p>
+            <p id="produk-unggulan" aria-live="polite">Produk unggulan akan muncul setelah data dimuat</p>
+            <div id="produk-dinamis" class="js-product-grid"></div>
         </section>
 
         <!-- KATALOG PRODUK -->
